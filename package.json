@@ -1,11 +1,14 @@
 {
 	"name": "blackcatui",
 	"version": "0.0.1",
+	"description": "A Purrfect SvelteKit and Tailwind CSS component library.",
+	"author": "Alex Patterson <alex@codingcat.dev>",
 	"scripts": {
 		"dev": "vite dev",
+		"build:jss": "node ./scripts/generate-jss.js",
 		"build": "vite build && npm run package",
 		"preview": "vite preview",
-		"package": "svelte-kit sync && svelte-package && publint",
+		"package": "npm run build:jss && svelte-kit sync && svelte-package",
 		"prepublishOnly": "npm run package",
 		"test": "playwright test",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
@@ -14,11 +17,23 @@
 		"lint": "prettier --plugin-search-dir . --check . && eslint .",
 		"format": "prettier --plugin-search-dir . --write ."
 	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/CodingCatDev/blackcatui.git"
+	},
+	"bugs": {
+		"url": "https://github.com/CodingCatDev/blackcatui/issues"
+	},
+	"license": "MIT",
+	"homepage": "https://blackcatui.com/",
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",
 			"svelte": "./dist/index.js"
-		}
+		},
+		"./themes/*": "./src/lib/themes/*",
+		"./styles/*": "./src/lib/styles/*",
+		"./tailwind/*": "./src/lib/tailwind/*"
 	},
 	"files": [
 		"dist"
@@ -31,22 +46,31 @@
 		"@sveltejs/adapter-auto": "^2.0.0",
 		"@sveltejs/kit": "^1.5.0",
 		"@sveltejs/package": "^2.0.0",
+		"@testing-library/svelte": "^3.2.2",
 		"@typescript-eslint/eslint-plugin": "^5.45.0",
 		"@typescript-eslint/parser": "^5.45.0",
+		"autoprefixer": "^10.4.7",
 		"eslint": "^8.28.0",
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-plugin-svelte3": "^4.0.0",
+		"postcss": "^8.4.21",
+		"postcss-import": "^15.1.0",
+		"postcss-js": "^4.0.0",
+		"postcss-load-config": "^4.0.1",
 		"prettier": "^2.8.0",
 		"prettier-plugin-svelte": "^2.8.1",
-		"publint": "^0.1.9",
 		"svelte": "^3.54.0",
 		"svelte-check": "^3.0.1",
+		"svelte-preprocess": "^4.10.7",
+		"tailwindcss": "^3.1.5",
 		"tslib": "^2.4.1",
 		"typescript": "^4.9.3",
 		"vite": "^4.0.0",
 		"vitest": "^0.25.3"
 	},
-	"svelte": "./dist/index.js",
 	"types": "./dist/index.d.ts",
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"@tailwindcss/forms": "^0.5.3"
+	}
 }
