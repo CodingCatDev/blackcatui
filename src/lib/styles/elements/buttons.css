@@ -46,23 +46,23 @@
 		/* Extend Base Button Clases */
 		@apply btn;
 		/* Size (match base) */
-		@apply text-base aspect-square w-[43px];
+		@apply text-base aspect-square w-[60px];
 		/* Rounded */
 		@apply rounded-full;
 	}
 
 	/* Icon Button: Size */
 	.btn-icon-sm {
-		@apply text-sm aspect-square w-[33px];
+		@apply text-sm aspect-square w-[50px];
 	}
 	.btn-icon-base {
-		@apply text-base aspect-square w-[43px];
+		@apply text-base aspect-square w-[60px];
 	}
 	.btn-icon-lg {
-		@apply text-lg aspect-square w-[53px];
+		@apply text-lg aspect-square w-[70px];
 	}
 	.btn-icon-xl {
-		@apply text-xl aspect-square w-[63px];
+		@apply text-xl aspect-square w-[80px];
 	}
 
 	/* File Input Button */

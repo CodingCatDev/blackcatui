@@ -1,4 +1,10 @@
 <script lang="ts">
+	// Depedency: Highlight JS
+	import hljs from 'highlight.js';
+	import '$lib/styles/highlight-js.css'; // was: 'highlight.js/styles/github-dark.css';
+	import { storeHighlightJs } from '$lib/components/DataDisplay/CodeBlock/stores';
+	storeHighlightJs.set(hljs);
+
 	// Theme
 	import '$lib/themes/theme-blackcatui.css';
 	// BlackCatUI Stylesheets
@@ -15,7 +21,7 @@
 <AppShell regionPage="overflow-y-scroll" slotPageFooter="pt-4 bg-surface-50-900-token">
 	<!-- Header -->
 	<svelte:fragment slot="bcu-app-shell-header">
-		<AppBar shadow="shadow-xl">Header</AppBar>
+		<AppBar shadow="shadow-lg">Header</AppBar>
 	</svelte:fragment>
 
 	<!-- Sidebar (Left) -->

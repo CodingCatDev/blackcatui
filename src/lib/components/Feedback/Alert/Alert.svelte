@@ -18,7 +18,7 @@
 
 	// Props (base)
 	/** Provide classes to set alert type. */
-	export let alertType: CssClasses = 'variant-filled-success';
+	export let variant: CssClasses = 'variant-filled-success';
 
 	// Props (slots)
 	/** Classes to apply to the message slot container element */
@@ -38,7 +38,7 @@
 	const cBase = 'flex';
 
 	// Reactive Classes
-	$: classesBase = `${cBase} ${alertType} ${$$props.class ?? ''}`;
+	$: classesBase = `${cBase} ${variant} ${$$props.class ?? ''}`;
 	$: classesSlotIcon = `${slotIcon}`;
 	$: classesSlotMessage = `${slotMessage}`;
 	$: classesSlotActions = `${slotActions}`;
