@@ -1,11 +1,12 @@
 <script lang="ts">
 	// Slots
-	/** @slot header - Insert fixed header content, such as BlackCatUI's App Bar component.
-	 * @slot sidebarLeft - Hidden when empty. Allows you to set fixed left sidebar content.
-	 * @slot sidebarRight - Hidden when empty. Allows you to set fixed right sidebar content.
-	 * @slot pageHeader - Insert content that resides above your page content. Great for global alerts.
-	 * @slot pageFooter - Insert content that resides below your page content. Recommended for most layouts.
-	 * @slot footer - Insert fixed footer content. Not recommended for most layouts.
+	/**
+	 * @slot bcu-app-shell-header - Insert fixed header content, such as BlackCatUI's App Bar component.
+	 * @slot bcu-app-shell-sidebar-left - Hidden when empty. Allows you to set fixed left sidebar content.
+	 * @slot bcu-app-shell-sidebar-right - Hidden when empty. Allows you to set fixed right sidebar content.
+	 * @slot bcu-app-shell-page-header - Insert content that resides above your page content. Great for global alerts.
+	 * @slot bcu-app-shell-page-footer - Insert content that resides below your page content. Recommended for most layouts.
+	 * @slot bcu-app-shell-footer - Insert fixed footer content. Not recommended for most layouts.
 	 */
 
 	// Types
@@ -47,47 +48,55 @@
 	$: classesFooter = `${slotFooter}`;
 </script>
 
-<div id="appShell" class={classesBase} data-testid="app-shell">
+<div id="bcu-app-shell" class={classesBase} data-testid="bcu-app-shell">
 	<!-- Slot: Header -->
-	{#if $$slots.header}
-		<header id="shell-header" class="flex-none {classesheader}"><slot name="header" /></header>
+	{#if $$slots['bcu-app-shell-header']}
+		<header id="shell-header" class="flex-none {classesheader}">
+			<slot name="bcu-app-shell-header" />
+		</header>
 	{/if}
 
 	<!-- Content Area -->
 	<div class="flex-auto {cContentArea}">
 		<!-- Slot: Sidebar (left) -->
-		{#if $$slots.sidebarLeft}
-			<aside id="sidebar-left" class={classesSidebarLeft}><slot name="sidebarLeft" /></aside>
+		{#if $$slots['bcu-app-shell-sidebar-left']}
+			<aside id="bcu-app-shell-sidebar-left" class={classesSidebarLeft}>
+				<slot name="bcu-app-shell-sidebar-left" />
+			</aside>
 		{/if}
 
 		<!-- Page -->
-		<div id="page" class="{regionPage} {cPage}" on:scroll>
+		<div id="bcu-app-shell-page" class="{regionPage} {cPage}" on:scroll>
 			<!-- Slot: Page Header -->
-			{#if $$slots.pageHeader}
-				<header id="page-header" class="flex-none {classesPageHeader}">
-					<slot name="pageHeader">(slot:header)</slot>
+			{#if $$slots['bcu-app-shell-page-header']}
+				<header id="bcu-app-shell-page-header" class="flex-none {classesPageHeader}">
+					<slot name="bcu-app-shell-page-header">(slot:header)</slot>
 				</header>
 			{/if}
 
 			<!-- Slot: Page Content (default) -->
-			<main id="page-content" class="flex-auto {classesPageContent}"><slot /></main>
+			<main id="bcu-app-shell-page-content" class="flex-auto {classesPageContent}"><slot /></main>
 
 			<!-- Slot: Page Footer -->
-			{#if $$slots.pageFooter}
-				<footer id="page-footer" class="flex-none {classesPageFooter}">
-					<slot name="pageFooter">(slot:footer)</slot>
+			{#if $$slots['bcu-app-shell-page-footer']}
+				<footer id="bcu-app-shell-page-footer" class="flex-none {classesPageFooter}">
+					<slot name="bcu-app-shell-page-footer">(slot:footer)</slot>
 				</footer>
 			{/if}
 		</div>
 
 		<!-- Slot: Sidebar (right) -->
-		{#if $$slots.sidebarRight}
-			<aside id="sidebar-right" class={classesSidebarRight}><slot name="sidebarRight" /></aside>
+		{#if $$slots['bcu-app-shell-sidebar-right']}
+			<aside id="bcu-app-shell-sidebar-right" class={classesSidebarRight}>
+				<slot name="bcu-app-shell-sidebar-right" />
+			</aside>
 		{/if}
 	</div>
 
 	<!-- Slot: footer -->
-	{#if $$slots.footer}
-		<footer id="shell-footer" class="flex-none {classesFooter}"><slot name="footer" /></footer>
+	{#if $$slots['bcu-app-shell-footer']}
+		<footer id="bcu-app-shell-footer" class="flex-none {classesFooter}">
+			<slot name="bcu-app-shell-footer" />
+		</footer>
 	{/if}
 </div>

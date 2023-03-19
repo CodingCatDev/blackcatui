@@ -8,9 +8,9 @@
 
 	// Slots
 	/**
-	 * @slot icon - Provides an area for icon like warning triangle
-	 * @slot message - Provides a vertical set of text information that fills the available width of the alert.
-	 * @slot actions - Provides a trailing area to house interactive action buttons.
+	 * @slot bcu-alert-icon - Provides an area for icon like warning triangle
+	 * @slot bcu-alert-message - Provides a vertical set of text information that fills the available width of the alert.
+	 * @slot bcu-alert-actions - Provides a trailing area to house interactive action buttons.
 	 */
 
 	// Types
@@ -54,18 +54,22 @@
 		transition:fade|local={transitionFade}
 	>
 		<!-- Icon -->
-		{#if $$slots.icon}
-			<div class="bcu-slot-icon {classesSlotIcon}"><slot name="icon" /></div>
+		{#if $$slots['bcu-alert-icon']}
+			<div class="bcu-alert-icon {classesSlotIcon}"><slot name="bcu-alert-icon" /></div>
 		{/if}
 
 		<!-- Slot: message -->
-		{#if $$slots.message}
-			<div class="alert-message bcu-slot-message {classesSlotMessage}"><slot name="message" /></div>
+		{#if $$slots['bcu-alert-message']}
+			<div class="alert-message bcu-alert-message {classesSlotMessage}">
+				<slot name="bcu-alert-message" />
+			</div>
 		{/if}
 
 		<!-- Actions -->
-		{#if $$slots.actions}
-			<div class="alert-actions bcu-slot-actions {classesSlotActions}"><slot name="actions" /></div>
+		{#if $$slots['bcu-alert-actions']}
+			<div class="alert-actions bcu-alert-actions {classesSlotActions}">
+				<slot name="bcu-alert-actions" />
+			</div>
 		{/if}
 	</aside>
 {/if}

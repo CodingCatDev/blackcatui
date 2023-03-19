@@ -14,14 +14,16 @@
 <!-- App Shell -->
 <AppShell regionPage="overflow-y-scroll" slotPageFooter="pt-4 bg-surface-50-900-token">
 	<!-- Header -->
-	<svelte:fragment slot="header"><AppBar shadow="shadow-xl">Header</AppBar></svelte:fragment>
+	<svelte:fragment slot="bcu-app-shell-header">
+		<AppBar shadow="shadow-xl">Header</AppBar>
+	</svelte:fragment>
 
 	<!-- Sidebar (Left) -->
-	<svelte:fragment slot="sidebarLeft">Sidebar</svelte:fragment>
+	<svelte:fragment slot="bcu-app-shell-sidebar-left">Sidebar</svelte:fragment>
 
 	<!-- Page Content -->
 	<slot />
 
 	<!-- Page Footer -->
-	<svelte:fragment slot="pageFooter">Footer</svelte:fragment>
+	<svelte:fragment slot="bcu-app-shell-page-footer">Footer</svelte:fragment>
 </AppShell>
