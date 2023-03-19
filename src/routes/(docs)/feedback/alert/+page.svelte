@@ -23,6 +23,47 @@
 				<DocsPreview>
 					<svelte:fragment slot="bcu-previewer-preview">
 						<Alert {variant} slotIcon="w-8">
+							<!-- Message -->
+							<svelte:fragment slot="bcu-alert-message">
+								<h3 data-toc-ignore="">Alert</h3>
+								<p>{message}</p>
+							</svelte:fragment>
+						</Alert>
+					</svelte:fragment>
+					<svelte:fragment slot="bcu-previewer-footer">
+						<div class="flex justify-center gap-4">
+							<select bind:value={variant} class="select w-auto">
+								{#each variants as vSet}
+									<optgroup label={vSet.label}>
+										{#each vSet.list as v}
+											<option value={v}>{v}</option>
+										{/each}
+									</optgroup>
+								{/each}
+							</select>
+						</div>
+					</svelte:fragment>
+					<svelte:fragment slot="bcu-previewer-source">
+						<CodeBlock language="ts" code={`let visible: boolean = true;`} />
+						<CodeBlock
+							language="html"
+							code={`
+<Alert {visible} {variant} slotIcon="w-8">
+	<!-- Message -->
+	<svelte:fragment slot="bcu-alert-message">
+		(message)
+	</svelte:fragment>
+</Alert>
+				`}
+						/>
+					</svelte:fragment>
+				</DocsPreview>
+			</div>
+			<div class="flex flex-col gap-4">
+				<h2>Alert with Icon</h2>
+				<DocsPreview>
+					<svelte:fragment slot="bcu-previewer-preview">
+						<Alert {variant} slotIcon="w-8">
 							<!-- Icon -->
 							<svelte:fragment slot="bcu-alert-icon">
 								<svg
