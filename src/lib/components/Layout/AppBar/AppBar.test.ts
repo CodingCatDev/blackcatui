@@ -16,7 +16,7 @@ describe('AppBar.svelte', () => {
 				border: 'border border-secondary-500',
 				padding: 'p-4',
 				shadow: 'shadow',
-				space: 'space-x-2',
+				spacing: 'space-x-2',
 				// Slots
 				slotLead: 'bg-red-500',
 				slotCenter: 'bg-green-500',

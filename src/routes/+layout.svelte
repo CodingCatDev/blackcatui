@@ -12,7 +12,7 @@
 </script>
 
 <!-- App Shell -->
-<AppShell regionPage="overflow-y-scroll" slotFooter="bg-black p-4">
+<AppShell regionPage="overflow-y-scroll" slotPageFooter="pt-4 bg-surface-50-900-token">
 	<!-- Header -->
 	<svelte:fragment slot="header"><AppBar shadow="shadow-xl">Header</AppBar></svelte:fragment>
 
