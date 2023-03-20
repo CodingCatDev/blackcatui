@@ -31,7 +31,6 @@ export const load = (async () => {
 			}
 		}
 	}
-	console.log(JSON.stringify(navLinks));
 	return {
 		navLinks
 	};

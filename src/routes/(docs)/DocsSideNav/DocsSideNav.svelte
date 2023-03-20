@@ -19,7 +19,7 @@
 				<ul>
 					{#each navLink.items as item}
 						<a
-							href={item?.path || ''}
+							href={`/${navLink.path}${item?.path ? '/' + item?.path : ''}`}
 							class={classesActive(item.path)}
 							data-sveltekit-preload-data="hover"
 						>
