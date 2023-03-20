@@ -18,7 +18,7 @@
 
 	// Props (base)
 	/** Provide classes to set alert type. */
-	export let variant: CssClasses = 'variant-filled-success';
+	export let variant: CssClasses = 'variant-filled';
 
 	// Props (slots)
 	/** Classes to apply to the message slot container element */
