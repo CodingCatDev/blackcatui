@@ -1,6 +1,6 @@
 import type { LayoutServerLoad } from './$types';
 
-export const load = (async () => {
+export const load = (async ({ cookies }) => {
 	const modules = import.meta.glob('../lib/components/**/*.svelte');
 
 	const navLinks: [{ group: string; path: string; items?: { item: string; path: string }[] }] = [
@@ -38,7 +38,16 @@ export const load = (async () => {
 			}
 		}
 	}
+	let theme = cookies.get('bcu-theme');
+	// If no theme, set theme to skeleton
+	if (!theme) {
+		cookies.set('bcu-theme', 'blackcatui', { path: '/' });
+		theme = 'blackcatui';
+	}
+	// Imports theme as a string
+	const themes = import.meta.glob(`$lib/themes/*.css`, { as: 'raw' });
 	return {
+		currentTheme: themes[`/src/lib/themes/theme-${theme}.css`](),
 		navLinks
 	};
 }) satisfies LayoutServerLoad;

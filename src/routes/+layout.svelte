@@ -18,7 +18,6 @@
 	storePopup.set({ computePosition, autoUpdate, flip, shift, offset, arrow });
 
 	// Theme
-	import '$lib/themes/theme-blackcatui.css';
 	// BlackCatUI Stylesheets
 	import '$lib/styles/all.css';
 	// Global Stylesheets
@@ -59,8 +58,13 @@
 		// Scroll heading into view
 		scrollHeadingIntoView();
 	});
+	$: ({ currentTheme } = data);
 </script>
 
+<svelte:head>
+	<!-- Select Preset Theme CSS DO NOT REMOVE ESCAPES-->
+	{@html `\<style\>${currentTheme}}\</style\>`}
+</svelte:head>
 <!-- App Shell -->
 <AppShell regionPage="overflow-y-scroll" slotPageFooter="pt-4 bg-surface-50-900-token">
 	<!-- Header -->

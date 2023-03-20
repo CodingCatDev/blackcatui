@@ -59,5 +59,4 @@ npm i @skeletonlabs/skeleton --save-dev
 			/>
 		</section>
 	</svelte:fragment>
-	<svelte:fragment slot="bcu-docs-aside">Show list here</svelte:fragment>
 </DocsLayout>
