@@ -3,8 +3,15 @@ import type { LayoutServerLoad } from './$types';
 export const load = (async () => {
 	const modules = import.meta.glob('../lib/components/**/*.svelte');
 
-	const navLinks: [{ group: string; path: string; items?: [{ item: string; path: string }] }] = [
-		{ group: 'Home', path: '' }
+	const navLinks: [{ group: string; path: string; items?: { item: string; path: string }[] }] = [
+		{
+			group: 'Docs',
+			path: 'docs',
+			items: [
+				{ item: 'Introduction', path: 'intro' },
+				{ item: 'Get Started', path: 'get-started' }
+			]
+		}
 	];
 	for (const path in modules) {
 		const splitPath = path.split('/');
