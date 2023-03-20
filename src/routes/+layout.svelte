@@ -2,7 +2,7 @@
 	// Core
 	import { page } from '$app/stores';
 	import { afterNavigate } from '$app/navigation';
-	import { storeCurrentUrl } from './stores';
+	import { storeCurrentUrl, storeTheme } from './stores';
 	import type { LayoutData } from './$types';
 	export let data: LayoutData;
 
@@ -11,6 +11,11 @@
 	import '$lib/styles/highlight-js.css'; // was: 'highlight.js/styles/github-dark.css';
 	import { storeHighlightJs } from '$lib/components/DataDisplay/CodeBlock/stores';
 	storeHighlightJs.set(hljs);
+
+	// Depedency: Floating UI
+	import { computePosition, autoUpdate, flip, shift, offset, arrow } from '@floating-ui/dom';
+	import { storePopup } from '$lib/components/Utilities/Popup/popup';
+	storePopup.set({ computePosition, autoUpdate, flip, shift, offset, arrow });
 
 	// Theme
 	import '$lib/themes/theme-blackcatui.css';
@@ -24,8 +29,15 @@
 	import AppBar from '$lib/components/Layout/AppBar/AppBar.svelte';
 	import DocsSideNav from './(docs)/DocsSideNav/DocsSideNav.svelte';
 	import DocsFooter from './(docs)/DocsFooter/DocsFooter.svelte';
-	import AjAlt from './(docs)/DocsLogos/AJAlt.svelte';
+	import DocsAppBar from './(docs)/DocsAppBar/DocsAppBar.svelte';
+	import { browser } from '$app/environment';
 
+	// Set body `data-theme` based on current theme status
+	storeTheme.subscribe(setBodyThemeAttribute);
+	function setBodyThemeAttribute(): void {
+		if (!browser) return;
+		document.body.setAttribute('data-theme', $storeTheme);
+	}
 	// Scroll heading into view
 	function scrollHeadingIntoView(): void {
 		if (!window.location.hash) return;
@@ -53,25 +65,7 @@
 <AppShell regionPage="overflow-y-scroll" slotPageFooter="pt-4 bg-surface-50-900-token">
 	<!-- Header -->
 	<svelte:fragment slot="bcu-app-shell-header">
-		<AppBar shadow="shadow-lg">
-			<svelte:fragment slot="bcu-app-bar-lead">
-				<div class="flex items-center space-x-4">
-					<!-- Hamburger Menu -->
-					<!-- <button on:click={drawerOpen} class="btn-icon btn-icon-sm lg:!hidden">
-						<i class="fa-solid fa-bars text-xl" />
-					</button> -->
-					<!-- Logo -->
-					<a
-						class="lg:!ml-0 w-[32px] lg:w-auto overflow-hidden flex items-center"
-						href="/"
-						title="Go to Homepage"
-					>
-						<AjAlt />
-						<div class="text-xl">BlackCatUI</div>
-					</a>
-				</div>
-			</svelte:fragment>
-		</AppBar>
+		<DocsAppBar />
 	</svelte:fragment>
 
 	<!-- Sidebar (Left) -->

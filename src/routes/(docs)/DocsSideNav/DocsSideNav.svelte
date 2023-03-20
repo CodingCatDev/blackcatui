@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { storeCurrentUrl } from '../../stores';
 
-	export let navLinks: [{ group: string; path: string; items?: [{ item: string; path: string }] }];
+	export let navLinks: [{ group: string; path: string; items?: { item: string; path: string }[] }];
 	$: classesActive = (href: string) =>
 		$storeCurrentUrl?.includes(href) ? 'bg-primary-active-token' : '';
 </script>

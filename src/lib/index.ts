@@ -25,3 +25,7 @@ export { default as AppShell } from './components/Layout/AppShell/AppShell.svelt
 // TODO: Maybe these should be sibling to components
 export * from './components/Utilities/Clipboard/clipboard';
 export * from './components/Utilities/LocalStorageStore/LocalStorageStore';
+export { default as LightSwitch } from './components/Utilities/LightSwitch/LightSwitch.svelte';
+export * from './components/Utilities/LightSwitch/lightswitch';
+export * from './components/Utilities/Popup/popup';
+export * from './components/Utilities/Popup/types';
