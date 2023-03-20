@@ -1,5 +1,6 @@
 {
-	"name": "blackcatui",
+	"name": "@codingcatdev/blackcatui",
+	"private": "false",
 	"version": "0.0.1",
 	"description": "A Purrfect SvelteKit and Tailwind CSS component library.",
 	"author": "Alex Patterson <alex@codingcat.dev>",
