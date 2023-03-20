@@ -1,4 +1,11 @@
 <script lang="ts">
+	// Core
+	import { page } from '$app/stores';
+	import { afterNavigate } from '$app/navigation';
+	import { storeCurrentUrl } from './stores';
+	import type { LayoutData } from './$types';
+	export let data: LayoutData;
+
 	// Depedency: Highlight JS
 	import hljs from 'highlight.js';
 	import '$lib/styles/highlight-js.css'; // was: 'highlight.js/styles/github-dark.css';
@@ -15,6 +22,12 @@
 	// Components & Utilities
 	import AppShell from '$lib/components/Layout/AppShell/AppShell.svelte';
 	import AppBar from '$lib/components/Layout/AppBar/AppBar.svelte';
+	import DocsSideNav from './(docs)/DocsSideNav/DocsSideNav.svelte';
+
+	afterNavigate((params: any) => {
+		// Store current page route URL
+		storeCurrentUrl.set($page.url.pathname);
+	});
 </script>
 
 <!-- App Shell -->
@@ -25,7 +38,9 @@
 	</svelte:fragment>
 
 	<!-- Sidebar (Left) -->
-	<svelte:fragment slot="bcu-app-shell-sidebar-left">Sidebar</svelte:fragment>
+	<svelte:fragment slot="bcu-app-shell-sidebar-left">
+		<DocsSideNav navLinks={data.navLinks} />
+	</svelte:fragment>
 
 	<!-- Page Content -->
 	<slot />
