@@ -24,6 +24,7 @@
 	import AppBar from '$lib/components/Layout/AppBar/AppBar.svelte';
 	import DocsSideNav from './(docs)/DocsSideNav/DocsSideNav.svelte';
 	import DocsFooter from './(docs)/DocsFooter/DocsFooter.svelte';
+	import AjAlt from './(docs)/DocsLogos/AJAlt.svelte';
 
 	// Scroll heading into view
 	function scrollHeadingIntoView(): void {
@@ -52,7 +53,25 @@
 <AppShell regionPage="overflow-y-scroll" slotPageFooter="pt-4 bg-surface-50-900-token">
 	<!-- Header -->
 	<svelte:fragment slot="bcu-app-shell-header">
-		<AppBar shadow="shadow-lg">Header</AppBar>
+		<AppBar shadow="shadow-lg">
+			<svelte:fragment slot="bcu-app-bar-lead">
+				<div class="flex items-center space-x-4">
+					<!-- Hamburger Menu -->
+					<!-- <button on:click={drawerOpen} class="btn-icon btn-icon-sm lg:!hidden">
+						<i class="fa-solid fa-bars text-xl" />
+					</button> -->
+					<!-- Logo -->
+					<a
+						class="lg:!ml-0 w-[32px] lg:w-auto overflow-hidden flex items-center"
+						href="/"
+						title="Go to Homepage"
+					>
+						<AjAlt />
+						<div class="text-xl">BlackCatUI</div>
+					</a>
+				</div>
+			</svelte:fragment>
+		</AppBar>
 	</svelte:fragment>
 
 	<!-- Sidebar (Left) -->
