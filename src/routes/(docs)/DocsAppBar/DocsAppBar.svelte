@@ -189,11 +189,13 @@
 		<!-- Social -->
 		<!-- prettier-ignore -->
 		<section class="hidden sm:inline-flex space-x-4">
-			<a class="btn-icon btn-icon-sm hover:variant-soft-primary" href="https://discord.gg/EXqV7W8MtY" target="_blank" rel="noreferrer">
-				<i class="fa-brands fa-discord text-lg" />
+			<a class="btn-icon hover:variant-soft-primary" href="https://discord.gg/vM2bagU" target="_blank" rel="noreferrer">
+				<svg viewBox="0 0 31 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M26.0015 1.9529C24.0021 1.03845 21.8787 0.37198 19.6623 0C19.3833 0.48048 19.0733 1.13144 18.8563 1.64292C16.4989 1.30193 14.1585 1.30193 11.8336 1.64292C11.6166 1.13144 11.2911 0.48048 11.0276 0C8.79575 0.37198 6.67235 1.03845 4.6869 1.9529C0.672601 7.8736 -0.41235 13.6548 0.130124 19.3585C2.79599 21.2959 5.36889 22.4739 7.89682 23.2489C8.51679 22.4119 9.07477 21.5129 9.55525 20.5675C8.64079 20.2265 7.77283 19.808 6.93587 19.312C7.15286 19.1571 7.36986 18.9866 7.57135 18.8161C12.6241 21.1255 18.0969 21.1255 23.0876 18.8161C23.3046 18.9866 23.5061 19.1571 23.7231 19.312C22.8861 19.808 22.0182 20.2265 21.1037 20.5675C21.5842 21.5129 22.1422 22.4119 22.7621 23.2489C25.2885 22.4739 27.8769 21.2959 30.5288 19.3585C31.1952 12.7559 29.4733 7.0212 26.0015 1.9529ZM10.2527 15.8402C8.73376 15.8402 7.49382 14.4608 7.49382 12.7714C7.49382 11.082 8.70276 9.7025 10.2527 9.7025C11.7871 9.7025 13.0425 11.082 13.0115 12.7714C13.0115 14.4608 11.7871 15.8402 10.2527 15.8402ZM20.4373 15.8402C18.9183 15.8402 17.6768 14.4608 17.6768 12.7714C17.6768 11.082 18.8873 9.7025 20.4373 9.7025C21.9717 9.7025 23.2271 11.082 23.1961 12.7714C23.1961 14.4608 21.9872 15.8402 20.4373 15.8402Z" fill="currentColor"/>
+				</svg>
 			</a>
-			<a class="btn-icon btn-icon-sm hover:variant-soft-primary" href="https://github.com/skeletonlabs/skeleton" target="_blank" rel="noreferrer">
-				<i class="fa-brands fa-github text-lg" />
+			<a class="btn-icon hover:variant-soft-primary" href="https://github.com/CodingCatDev/blackcatui" target="_blank" rel="noreferrer">
+				<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" version="1.1" data-view-component="true" class="octicon octicon-mark-github v-align-middle"><path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"></path></svg>
 			</a>
 		</section>
 
@@ -211,40 +213,15 @@
 		<!-- Sponsor -->
 		<div>
 			<!-- trigger -->
-			<button
+			<a
 				class="btn py-1.5 variant-soft hover:variant-soft-primary hidden sm:inline-block"
-				use:popup={{ event: 'click', target: 'sponsor' }}
+				href="https://github.com/sponsors/codingcatdev"
+				target="_blank"
+				rel="noreferrer"
 			>
 				<i class="fa-solid fa-heart" />
 				<span class="hidden md:inline-block">Sponsor</span>
-			</button>
-			<!-- popup -->
-			<div class="card p-4 w-60 shadow-xl" data-popup="sponsor">
-				<nav class="list-nav">
-					<ul>
-						<li>
-							<a href="https://ko-fi.com/skeletonlabs" target="_blank" rel="noreferrer">
-								<span class="w-6 text-center"><i class="fa-solid fa-mug-saucer" /></span>
-								<span>Ko-Fi</span>
-							</a>
-						</li>
-						<li>
-							<a href="https://github.com/sponsors/skeletonlabs" target="_blank" rel="noreferrer">
-								<span class="w-6 text-center"><i class="fa-brands fa-github" /></span>
-								<span>GitHub</span>
-							</a>
-						</li>
-						<li>
-							<a href="https://patreon.com/user?u=83786276" target="_blank" rel="noreferrer">
-								<span class="w-6 text-center"><i class="fa-brands fa-patreon" /></span>
-								<span>Patreon</span>
-							</a>
-						</li>
-					</ul>
-				</nav>
-				<!-- Arrow -->
-				<div class="arrow bg-surface-100-800-token" />
-			</div>
+			</a>
 		</div>
 	</svelte:fragment>
 </AppBar>
