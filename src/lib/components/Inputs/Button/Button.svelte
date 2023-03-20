@@ -11,9 +11,9 @@
 
 	// Props (base)
 	/** Provide classes to set button type. */
-	export let variant: CssClasses = 'variant-filled-success';
+	export let variant: CssClasses = 'variant-filled';
 	/** Provide classes to set button size. btn-sm | btn-lg | btn-xl */
-	export let buttonSize: CssClasses = 'btn-sm';
+	export let buttonSize: CssClasses = 'btn';
 
 	// Props (slots)
 	/** Classes to apply to the message slot container element */
@@ -45,6 +45,7 @@
 	data-testid="bcu-button"
 	aria-label={label}
 	aria-labelledby={labelledby}
+	on:click
 >
 	<!-- Start Icon -->
 	{#if $$slots['bcu-button-start-icon']}

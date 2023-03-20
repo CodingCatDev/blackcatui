@@ -1,11 +1,13 @@
 <script lang="ts">
+	// Core
 	import CodeBlock from '$lib/components/DataDisplay/CodeBlock/CodeBlock.svelte';
-	import Alert from '$lib/components/Feedback/Alert/Alert.svelte';
 	import DocsLayout from '../../DocsLayout/DocsLayout.svelte';
 	import DocsPreview from '../../DocsPreview/DocsPreview.svelte';
 	import { variants } from '../../DocsPreview/options';
-
 	let variant = 'variant-filled-error';
+
+	// Current Component
+	import Alert from '$lib/components/Feedback/Alert/Alert.svelte';
 	const message =
 		'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi, cupiditate eveniet in neque magnam quos ad cumque quae numquam voluptatum magni atque vitae dolore voluptatibus.';
 	// Functions
