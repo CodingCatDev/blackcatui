@@ -5,6 +5,8 @@
 	 * @slot bcu-docs-detail - Any information to further show documentation
 	 * @slot bcu-docs-aside - advertising and page navigation
 	 */
+
+	import TableOfContents from '$lib/components/DataDisplay/TableOfContents/TableOfContents.svelte';
 </script>
 
 <section class="bcu-docs-layout page-padding flex items-start gap-10 relative">
@@ -20,5 +22,6 @@
 		{#if $$slots['bcu-docs-aside']}
 			<div class="bcu-docs-slot-header"><slot name="bcu-docs-aside" /></div>
 		{/if}
+		<TableOfContents target=".bcu-docs-detail" />
 	</aside>
 </section>

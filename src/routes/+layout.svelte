@@ -23,10 +23,28 @@
 	import AppShell from '$lib/components/Layout/AppShell/AppShell.svelte';
 	import AppBar from '$lib/components/Layout/AppBar/AppBar.svelte';
 	import DocsSideNav from './(docs)/DocsSideNav/DocsSideNav.svelte';
+	import DocsFooter from './(docs)/DocsFooter/DocsFooter.svelte';
 
+	// Scroll heading into view
+	function scrollHeadingIntoView(): void {
+		if (!window.location.hash) return;
+		const elemTarget: HTMLElement | null = document.querySelector(window.location.hash);
+		if (elemTarget) elemTarget.scrollIntoView({ behavior: 'smooth' });
+	}
+
+	// Lifecycle
 	afterNavigate((params: any) => {
 		// Store current page route URL
 		storeCurrentUrl.set($page.url.pathname);
+		// Scroll to top
+		const isNewPage: boolean =
+			params.from && params.to && params.from.route.id !== params.to.route.id;
+		const elemPage = document.querySelector('#bcu-app-shell-page');
+		if (isNewPage && elemPage !== null) {
+			elemPage.scrollTop = 0;
+		}
+		// Scroll heading into view
+		scrollHeadingIntoView();
 	});
 </script>
 
@@ -46,5 +64,5 @@
 	<slot />
 
 	<!-- Page Footer -->
-	<svelte:fragment slot="bcu-app-shell-page-footer">Footer</svelte:fragment>
+	<svelte:fragment slot="bcu-app-shell-page-footer"><DocsFooter /></svelte:fragment>
 </AppShell>

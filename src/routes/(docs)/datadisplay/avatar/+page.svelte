@@ -3,7 +3,6 @@
 	import CodeBlock from '$lib/components/DataDisplay/CodeBlock/CodeBlock.svelte';
 	import DocsLayout from '../../DocsLayout/DocsLayout.svelte';
 	import DocsPreview from '../../DocsPreview/DocsPreview.svelte';
-	import { variants } from '../../DocsPreview/options';
 	let variant = 'variant-filled-error';
 
 	// Current Component
@@ -140,5 +139,4 @@
 			</div>
 		</section>
 	</svelte:fragment>
-	<svelte:fragment slot="bcu-docs-aside">Show list here</svelte:fragment>
 </DocsLayout>

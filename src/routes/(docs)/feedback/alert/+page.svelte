@@ -4,7 +4,7 @@
 	import DocsLayout from '../../DocsLayout/DocsLayout.svelte';
 	import DocsPreview from '../../DocsPreview/DocsPreview.svelte';
 	import { variants } from '../../DocsPreview/options';
-	let variant = 'variant-filled-error';
+	let variant = 'variant-filled';
 
 	// Current Component
 	import Alert from '$lib/components/Feedback/Alert/Alert.svelte';

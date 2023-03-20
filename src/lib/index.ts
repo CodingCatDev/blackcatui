@@ -8,6 +8,7 @@ export type CssClasses = string;
 // DataDisplay
 export { default as Avatar } from './components/DataDisplay/Avatar/Avatar.svelte';
 export { default as CodeBlock } from './components/DataDisplay/CodeBlock/CodeBlock.svelte';
+export { default as TableOfContents } from './components/DataDisplay/TableOfContents/TableOfContents.svelte';
 
 // Feedback
 export { default as Alert } from './components/Feedback/Alert/Alert.svelte';
