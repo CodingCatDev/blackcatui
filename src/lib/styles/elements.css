@@ -3,6 +3,7 @@
 /* Recommended as the LAST stylesheet in the set */
 
 @import 'elements/alerts.css';
+@import 'elements/avatar.css';
 @import 'elements/badges.css';
 @import 'elements/breadcrumbs.css';
 @import 'elements/buttons.css';
