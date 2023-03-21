@@ -35,7 +35,7 @@
 	export let labelledby = '';
 
 	// Base Classes
-	const cBase = 'flex';
+	const cBase = 'flex gap-1 sm:gap-2';
 
 	// Reactive Classes
 	$: classesBase = `${cBase} ${variant} ${$$props.class ?? ''}`;

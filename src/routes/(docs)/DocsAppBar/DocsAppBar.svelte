@@ -83,7 +83,12 @@
 				<AjAlt />
 			</a>
 			<!-- Title -->
-			<span class="text-xl"> BlackCatUI </span>
+			<a
+				class="text-primary-700 dark:text-primary-500 hover:brightness-110 hidden sm:block sm:text-xl md:text-3xl"
+				href="/"
+			>
+				BlackCatUI
+			</a>
 		</div>
 	</svelte:fragment>
 	<svelte:fragment slot="bcu-app-bar-trail">
