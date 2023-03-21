@@ -123,7 +123,7 @@
 				{/if}
 				<!-- Toggle Swatches -->
 				<button
-					class="btn {swatches ? 'variant-filled' : 'variant-soft'}"
+					class="bcu-button {swatches ? 'variant-filled' : 'variant-soft'}"
 					on:click={toggleSwatches}
 					title="Backgrounds"
 				>

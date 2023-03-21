@@ -13,7 +13,7 @@
 		'flex flex-col md:flex-row justify-between items-center md:items-start space-y-4 md:space-y-0';
 </script>
 
-<div class="page-footer {cBase}">
+<div class="bcu-docs-page-footer {cBase}">
 	<div class="w-full max-w-7xl mx-auto p-4 py-16 md:py-24 space-y-10">
 		<!-- Row 1 -->
 		<section class={cRowOne}>
@@ -80,7 +80,7 @@
 			</p>
 			<div class="flex gap-2">
 				<a
-					class="btn variant-soft"
+					class="bcu-button variant-soft"
 					href="https://github.com/CodingCatDev/blackcatui"
 					target="_blank"
 					rel="noreferrer"
@@ -89,7 +89,7 @@
 					<span class="hidden md:inline-block ml-2">Github</span>
 				</a>
 				<a
-					class="btn variant-soft"
+					class="bcu-button variant-soft"
 					href="https://discord.gg/vM2bagU"
 					target="_blank"
 					rel="noreferrer"
@@ -98,7 +98,7 @@
 					<span class="hidden md:inline-block ml-2">Discord</span>
 				</a>
 				<a
-					class="btn variant-soft"
+					class="bcu-button variant-soft"
 					href="https://twitter.com/CodingCatDev"
 					target="_blank"
 					rel="noreferrer"
@@ -107,7 +107,7 @@
 					<span class="hidden md:inline-block ml-2">Twitter</span>
 				</a>
 				<a
-					class="btn variant-soft"
+					class="bcu-button variant-soft"
 					href="https://www.youtube.com/CodingCatDev"
 					target="_blank"
 					rel="noreferrer"

@@ -46,7 +46,7 @@
 
 {#if visible}
 	<aside
-		class="alert {classesBase}"
+		class="bcu-alert {classesBase}"
 		data-testid="bcu-alert"
 		role="alert"
 		aria-label={label}

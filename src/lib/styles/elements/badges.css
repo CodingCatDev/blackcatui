@@ -1,7 +1,7 @@
 /* Tailwind Elements: badges.css */
 
 @layer components {
-	.badge {
+	.bcu-badge {
 		/* Core */
 		@apply inline-flex justify-center items-center space-x-2 whitespace-nowrap;
 		/* Text */
@@ -12,7 +12,7 @@
 		@apply rounded-token;
 	}
 
-	.badge-icon {
+	.bcu-badge-icon {
 		/* Core */
 		@apply w-5 h-5 flex justify-center items-center rounded-full;
 		/* Text */
@@ -24,7 +24,7 @@
 	/* === Variants === */
 
 	/* Glass */
-	.badge-glass {
+	.bcu-badge-glass {
 		@apply bg-surface-500/20 dark:bg-surface-500/20 backdrop-blur-lg;
 		@apply ring-[1px] ring-neutral-900/5 dark:ring-neutral-50/5 ring-inset;
 	}

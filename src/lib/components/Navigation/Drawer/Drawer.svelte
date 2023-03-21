@@ -161,8 +161,8 @@
 	<!-- Backdrop -->
 	<div
 		bind:this={elemBackdrop}
-		class="drawer-backdrop {classesBackdrop}"
-		data-testid="drawer-backdrop"
+		class="bcu-drawer-backdrop {classesBackdrop}"
+		data-testid="bcu-drawer-backdrop"
 		on:mousedown={onBackdropInteraction}
 		on:touchstart={onBackdropInteraction}
 		on:keypress
@@ -172,8 +172,8 @@
 		<!-- Drawer -->
 		<div
 			bind:this={elemDrawer}
-			class="drawer {classesDrawer}"
-			data-testid="drawer"
+			class="bcu-drawer {classesDrawer}"
+			data-testid="bcu-drawer"
 			role="dialog"
 			aria-modal="true"
 			aria-labelledby={labelledby}

@@ -1,14 +1,14 @@
 import { render } from '@testing-library/svelte';
 import { describe, it, expect } from 'vitest';
 
-import RadioGroup from '$lib/components/Radio/RadioGroup.svelte';
+import RadioGroup from '$lib/components/Inputs/Radio/RadioGroup.svelte';
 
 describe('RadioGroup.svelte', () => {
 	it('Renders with minimal props', async () => {
 		const { getByTestId } = render(RadioGroup, {
 			props: {}
 		});
-		expect(getByTestId('radio-group')).toBeTruthy();
+		expect(getByTestId('bcu-radio-group')).toBeTruthy();
 	});
 
 	it('Renders with all props', () => {
@@ -25,6 +25,6 @@ describe('RadioGroup.svelte', () => {
 				label: 'testRadioGroup'
 			}
 		});
-		expect(getByTestId('radio-group')).toBeTruthy();
+		expect(getByTestId('bcu-radio-group')).toBeTruthy();
 	});
 });

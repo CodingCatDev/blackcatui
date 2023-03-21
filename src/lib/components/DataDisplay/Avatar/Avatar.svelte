@@ -34,7 +34,7 @@
 <!-- Slot: message -->
 {#if $$slots['bcu-avatar-message']}
 	<div
-		class="avatar {classesBase} {classesSlotMessage}"
+		class="bcu-avatar {classesBase} {classesSlotMessage}"
 		aria-label={label}
 		aria-labelledby={labelledby}
 	>
@@ -42,7 +42,7 @@
 	</div>
 {:else}
 	<div
-		class="avatar {classesBase} text-center object-cover text-transparent"
+		class="bcu-avatar {classesBase} text-center object-cover text-transparent"
 		aria-label={label}
 		aria-labelledby={labelledby}
 	>

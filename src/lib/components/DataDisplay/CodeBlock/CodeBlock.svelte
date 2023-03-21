@@ -30,7 +30,7 @@
 	/** Provide classes to set the box shadow. */
 	export let shadow: CssClasses = 'shadow';
 	/** Provide classes to set the button styles. */
-	export let button: CssClasses = 'btn btn-sm variant-soft !text-white';
+	export let button: CssClasses = 'bcu-button bcu-button-sm variant-soft !text-white';
 	/** Provide the button label text. */
 	export let buttonLabel = 'Copy';
 	/** Provide the button label text when copied. */
@@ -76,17 +76,17 @@
 
 <!-- prettier-ignore -->
 {#if language && code}
-<div class="code-block {classesBase}" data-testid="code-block">
+<div class="bcu-code-block {classesBase}" data-testid="bcu-code-block">
 	<!-- Header -->
-	<header class="code-block-header {cHeader}">
+	<header class="bcu-code-block-header {cHeader}">
 		<!-- Language -->
-		<span class="code-block-language">{languageFormatter(language)}</span>
+		<span class="bcu-code-block-language">{languageFormatter(language)}</span>
 		<!-- Copy Button -->
-		<button class="code-block-btn {button}" on:click={onCopyClick} use:clipboard={code}>
+		<button class="bcu-code-block-bcu-button {button}" on:click={onCopyClick} use:clipboard={code}>
 			{!copyState ? buttonLabel : buttonCopied}
 		</button>
 	</header>
 	<!-- Pre/Code -->
-	<pre class="code-block-pre {cPre}"><code class="code-block-code language-{language}">{#if formatted}{@html displayCode}{:else}{code.trim()}{/if}</code></pre>
+	<pre class="bcu-code-block-pre {cPre}"><code class="bcu-code-block-code language-{language}">{#if formatted}{@html displayCode}{:else}{code.trim()}{/if}</code></pre>
 </div>
 {/if}

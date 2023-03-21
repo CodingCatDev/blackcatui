@@ -6,7 +6,7 @@ import AppShell from '$lib/components/Layout/AppShell/AppShell.svelte';
 describe('AppShell.svelte', () => {
 	it('Renders with minimal props', async () => {
 		const { getByTestId } = render(AppShell);
-		expect(getByTestId('app-shell')).toBeTruthy();
+		expect(getByTestId('bcu-app-shell')).toBeTruthy();
 	});
 
 	it('Renders with all props', async () => {
@@ -21,6 +21,6 @@ describe('AppShell.svelte', () => {
 				slotFooter: 'bg-purple-500'
 			}
 		});
-		expect(getByTestId('app-shell')).toBeTruthy();
+		expect(getByTestId('bcu-app-shell')).toBeTruthy();
 	});
 });

@@ -12,8 +12,8 @@
 	// Props (base)
 	/** Provide classes to set button type. */
 	export let variant: CssClasses = 'variant-filled';
-	/** Provide classes to set button size. btn-sm | btn-lg | btn-xl */
-	export let buttonSize: CssClasses = 'btn';
+	/** Provide classes to set button size. bcu-button-sm | bcu-button-lg | bcu-button-xl */
+	export let buttonSize: CssClasses = 'bcu-button';
 
 	// Props (slots)
 	/** Classes to apply to the message slot container element */
@@ -41,7 +41,7 @@
 </script>
 
 <button
-	class="btn {classesBase}"
+	class="bcu-button {classesBase}"
 	data-testid="bcu-button"
 	aria-label={label}
 	aria-labelledby={labelledby}

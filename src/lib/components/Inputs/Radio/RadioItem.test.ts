@@ -1,7 +1,7 @@
 import { render } from '@testing-library/svelte';
 import { describe, it, expect } from 'vitest';
 
-import RadioItem from '$lib/components/Radio/RadioItem.svelte';
+import RadioItem from '$lib/components/Inputs/Radio/RadioItem.svelte';
 
 describe('RadioItem.svelte', () => {
 	it('Renders with minimal props', async () => {

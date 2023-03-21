@@ -1,7 +1,7 @@
 /* Tailwind Elements: cards.css */
 
 @layer components {
-	.card {
+	.bcu-card {
 		/* background */
 		@apply bg-surface-100-800-token;
 		/* Ring */
@@ -12,21 +12,21 @@
 
 	/* === Regions === */
 
-	.card-header {
+	.bcu-card-header {
 		@apply p-4 pb-0;
 	}
 
-	.card-footer {
+	.bcu-card-footer {
 		@apply p-4 pt-0;
 	}
 
 	/* === States === */
 
-	a.card {
+	a.bcu-card {
 		@apply transition-all hover:brightness-105;
 	}
 
-	.card-hover {
+	.bcu-card-hover {
 		@apply transition-all hover:scale-[101%] hover:shadow-xl;
 	}
 }

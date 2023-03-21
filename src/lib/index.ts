@@ -6,7 +6,7 @@ export type CssClasses = string;
 // Svelte Components ---
 
 // DataDisplay
-export { default as Avatar } from './components/DataDisplay/Avatar/Avatar.svelte';
+export { default as Avatar } from './components/DataDisplay/BcuAvatar/BcuAvatar.svelte';
 export { default as CodeBlock } from './components/DataDisplay/CodeBlock/CodeBlock.svelte';
 export { default as TableOfContents } from './components/DataDisplay/TableOfContents/TableOfContents.svelte';
 

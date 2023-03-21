@@ -6,7 +6,7 @@ import AppBar from '$lib/components/Layout/AppBar/AppBar.svelte';
 describe('AppBar.svelte', () => {
 	it('Renders with minimal props', async () => {
 		const { getByTestId } = render(AppBar);
-		expect(getByTestId('app-bar')).toBeTruthy();
+		expect(getByTestId('bcu-app-bar')).toBeTruthy();
 	});
 
 	it('Renders with all props', async () => {
@@ -26,6 +26,6 @@ describe('AppBar.svelte', () => {
 				labelledby: 'TestLabelAppShell'
 			}
 		});
-		expect(getByTestId('app-bar')).toBeTruthy();
+		expect(getByTestId('bcu-app-bar')).toBeTruthy();
 	});
 });

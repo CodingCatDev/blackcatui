@@ -107,12 +107,3 @@
 [data-theme='skeleton'] h6 {
 	font-weight: bold;
 }
-
-/* Applied to body with `<body data-theme="skeleton">` */
-/* Created with: https://csshero.org/mesher/ */
-/* prettier-ignore */
-[data-theme='skeleton'] {
-	background-image:
-			radial-gradient(at 0% 0%, rgba(var(--color-secondary-500) / 0.33) 0px, transparent 50%),
-			radial-gradient(at 98% 1%, rgba(var(--color-error-500) / 0.33) 0px, transparent 50%);
-}

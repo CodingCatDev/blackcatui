@@ -78,7 +78,7 @@
 
 	<!-- Sidebar (Left) -->
 	<svelte:fragment slot="bcu-app-shell-sidebar-left">
-		<DocsSideNav class="hidden lg:grid w-[360px] overflow-hidden" navLinks={data.navLinks} />
+		<DocsSideNav class="hidden lg:grid w-72 overflow-hidden" navLinks={data.navLinks} />
 	</svelte:fragment>
 
 	<!-- Page Content -->

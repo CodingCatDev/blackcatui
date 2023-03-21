@@ -27,7 +27,7 @@
 						<Alert {variant} slotIcon="w-8">
 							<!-- Message -->
 							<svelte:fragment slot="bcu-alert-message">
-								<h3 data-toc-ignore="">Alert</h3>
+								<h3 data-bcu-toc-ignore="">Alert</h3>
 								<p>{message}</p>
 							</svelte:fragment>
 						</Alert>
@@ -84,7 +84,7 @@
 
 							<!-- Message -->
 							<svelte:fragment slot="bcu-alert-message">
-								<h3 data-toc-ignore="">Alert</h3>
+								<h3 data-bcu-toc-ignore="">Alert</h3>
 								<p>{message}</p>
 							</svelte:fragment>
 						</Alert>
@@ -146,14 +146,14 @@
 
 							<!-- Message -->
 							<svelte:fragment slot="bcu-alert-message">
-								<h3 data-toc-ignore="">Alert</h3>
+								<h3 data-bcu-toc-ignore="">Alert</h3>
 								<p>{message}</p>
 							</svelte:fragment>
 
 							<!-- Actions -->
 							<svelte:fragment slot="bcu-alert-actions">
-								<button class="btn variant-filled" on:click={triggerAction}>Action</button>
-								<button class="btn variant-filled">
+								<button class="bcu-button variant-filled" on:click={triggerAction}>Action</button>
+								<button class="bcu-button variant-filled">
 									<svg
 										xmlns="http://www.w3.org/2000/svg"
 										fill="none"

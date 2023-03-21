@@ -3,7 +3,7 @@
 @layer components {
 	/* === Base === */
 
-	.placeholder {
+	.bcu-placeholder {
 		@apply bg-surface-300-600-token h-5;
 		/* Theme: Rounded */
 		@apply rounded-token;
@@ -11,7 +11,7 @@
 
 	/* === Shapes === */
 
-	.placeholder-circle {
+	.bcu-placeholder-circle {
 		@apply bg-surface-300-600-token aspect-square rounded-full;
 	}
 }

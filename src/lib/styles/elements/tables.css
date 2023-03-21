@@ -1,11 +1,11 @@
 /* Elements: tables.css */
 
 @layer components {
-	.table-container {
+	.bcu-table-container {
 		@apply overflow-x-auto w-full rounded-container-token;
 	}
 
-	.table {
+	.bcu-table {
 		@apply w-full overflow-hidden table-auto;
 		/* background */
 		@apply bg-surface-100-800-token;
@@ -15,11 +15,11 @@
 
 	/* === Hover Styles ==== */
 
-	.table-hover tbody tr {
+	.bcu-table-hover tbody tr {
 		@apply hover:bg-surface-500/20 even:hover:bg-surface-500/20;
 	}
 
-	.table-interactive tbody tr {
+	.bcu-table-interactive tbody tr {
 		@apply hover:bg-primary-hover-token even:hover:bg-primary-hover-token cursor-pointer;
 	}
 
@@ -31,40 +31,40 @@
 		@apply after:opacity-0 after:!ml-2 after:!content-['↓'];
 	}
 
-	.table-sort-asc {
+	.bcu-table-sort-asc {
 		@apply after:opacity-50 after:!content-['↓'];
 	}
 
-	.table-sort-dsc {
+	.bcu-table-sort-dsc {
 		@apply after:opacity-50 after:!content-['↑'];
 	}
 
 	/* === Table Head === */
 
-	.table thead {
+	.bcu-table thead {
 		@apply bg-surface-200-700-token border-b border-surface-500/20;
 	}
 
-	.table thead tr {
+	.bcu-table thead tr {
 		@apply capitalize text-left;
 	}
 
-	.table thead th {
+	.bcu-table thead th {
 		@apply font-bold p-4;
 	}
 
 	/* === Table Body === */
 
-	.table tbody tr {
+	.bcu-table tbody tr {
 		@apply border-b border-surface-500/20 even:bg-surface-500/5;
 	}
 
-	.table tbody td {
+	.bcu-table tbody td {
 		/* NOTE: removed this to allow wrapping */
 		@apply text-sm px-3 py-4 align-top whitespace-nowrap lg:whitespace-normal;
 	}
 
-	.table-compact tbody td {
+	.bcu-table-compact tbody td {
 		@apply !py-3;
 	}
 
@@ -74,29 +74,29 @@
 
 	/* === Table Foot === */
 
-	.table tfoot {
+	.bcu-table tfoot {
 		@apply bg-surface-100-800-token;
 	}
 
-	.table tfoot tr {
+	.bcu-table tfoot tr {
 		@apply capitalize text-left;
 	}
 
-	.table tfoot th,
-	.table tfoot td {
+	.bcu-table tfoot th,
+	.bcu-table tfoot td {
 		@apply p-4;
 	}
 
 	/* === Rows Specific === */
 
-	.table-row-checked {
+	.bcu-table-row-checked {
 		@apply !bg-secondary-500/20;
 	}
 
 	/* === Cells Specific === */
 
 	/* Source: https://stackoverflow.com/questions/11267154/fit-cell-width-to-content */
-	.table-cell-fit {
+	.bcu-table-cell-fit {
 		@apply w-[1%] whitespace-nowrap;
 	}
 }

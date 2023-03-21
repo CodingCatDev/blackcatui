@@ -91,20 +91,20 @@
 		<div>
 			<!-- trigger -->
 			<button
-				class="btn hover:variant-soft-primary"
+				class="bcu-button hover:variant-soft-primary"
 				use:popup={{ event: 'click', target: 'theme' }}
 			>
 				<Icon src={Swatch} theme="solid" class="w-8" />
 				<span class="hidden md:inline-block">Theme</span>
 			</button>
 			<!-- popup -->
-			<div class="card p-4 w-60 shadow-xl" data-popup="theme">
+			<div class="bcu-card p-4 w-60 shadow-xl" data-popup="theme">
 				<div class="space-y-4">
 					<section class="flex justify-between items-center">
 						<h6>Mode</h6>
 						<LightSwitch />
 					</section>
-					<nav class="list-nav p-4 -m-4 max-h-64 lg:max-h-[500px] overflow-y-auto">
+					<nav class="bcu-list-nav p-4 -m-4 max-h-64 lg:max-h-[500px] overflow-y-auto">
 						<form action="/?/setTheme" method="POST" use:enhance={setTheme}>
 							<ul>
 								{#each themes as { icon, name, type }}
@@ -125,7 +125,9 @@
 						</form>
 					</nav>
 					<div>
-						<a class="btn variant-ghost-surface w-full" href="/docs/generator">Create a Theme</a>
+						<a class="bcu-button variant-ghost-surface w-full" href="/docs/generator"
+							>Create a Theme</a
+						>
 					</div>
 				</div>
 				<!-- Arrow -->
@@ -136,10 +138,10 @@
 		<!-- Social -->
 		<!-- prettier-ignore -->
 		<section class="hidden sm:inline-flex sm:gap-2">
-			<a class="btn-icon hover:variant-soft-primary" href="https://discord.gg/vM2bagU" target="_blank" rel="noreferrer">
+			<a class="bcu-button-icon hover:variant-soft-primary" href="https://discord.gg/vM2bagU" target="_blank" rel="noreferrer">
 				<Icon src={Discord} theme="solid" />
 			</a>
-			<a class="btn-icon hover:variant-soft-primary" href="https://github.com/CodingCatDev/blackcatui" target="_blank" rel="noreferrer">
+			<a class="bcu-button-icon hover:variant-soft-primary" href="https://github.com/CodingCatDev/blackcatui" target="_blank" rel="noreferrer">
 				<Icon src={Github} theme="solid" />
 			</a>
 		</section>
@@ -147,7 +149,7 @@
 		<!-- Search -->
 		<!-- <div class="md:inline md:ml-4">
 			<button
-				class="btn p-2 px-4 space-x-4 variant-soft hover:variant-soft-primary"
+				class="bcu-button p-2 px-4 space-x-4 variant-soft hover:variant-soft-primary"
 				on:click={triggerSearch}
 			>
 				<i class="fa-solid fa-magnifying-glass" />
@@ -159,7 +161,7 @@
 		<div>
 			<!-- trigger -->
 			<a
-				class="btn py-1.5 variant-soft hover:variant-soft-primary hidden md:inline-block"
+				class="bcu-button py-1.5 variant-soft hover:variant-soft-primary hidden md:inline-block"
 				href="https://github.com/sponsors/codingcatdev"
 				target="_blank"
 				rel="noreferrer"

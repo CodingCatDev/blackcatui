@@ -54,8 +54,8 @@
 	function generateHeadingList(): void {
 		// Select only relevant headings
 		allowedHeadingsList?.forEach((elem: HTMLElement) => {
-			// Skip if `data-toc-ignore` attribute set
-			if (elem.hasAttribute('data-toc-ignore')) return;
+			// Skip if `data-bcu-toc-ignore` attribute set
+			if (elem.hasAttribute('data-bcu-toc-ignore')) return;
 			// Generate a unique ID if none present
 			if (!elem.id) {
 				let newId = elem.innerText
@@ -136,13 +136,13 @@
 <!-- @component Allows you to quickly navigate the hierarchy of headings for the current page. -->
 
 {#if filteredHeadingsList.length > 0}
-	<div class="toc {classesBase}" transition:fade|local={{ duration: 100 }}>
-		<nav class="toc-list {classesList}">
-			<div class="toc-label {classesLabel}">{label}</div>
+	<div class="bcu-toc {classesBase}" transition:fade|local={{ duration: 100 }}>
+		<nav class="bcu-toc-list {classesList}">
+			<div class="bcu-toc-label {classesLabel}">{label}</div>
 			{#each filteredHeadingsList as headingElem, i}
 				<!-- prettier-ignore -->
 				<li
-					class="toc-list-item {classesListItem} {setHeadingClasses(headingElem)} {headingElem.id === activeHeaderId ? active : ''}"
+					class="bcu-toc-list-item {classesListItem} {setHeadingClasses(headingElem)} {headingElem.id === activeHeaderId ? active : ''}"
 					on:click={() => { scrollToHeading(headingElem); }}
 					on:click
 					on:keypress

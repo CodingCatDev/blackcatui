@@ -2,14 +2,14 @@
 
 /* === Modal (helpers) === */
 
-.w-modal-slim {
+.bcu-modal-slim {
 	@apply w-full max-w-[400px];
 }
 
-.w-modal {
+.bcu-modal {
 	@apply w-full max-w-[640px];
 }
 
-.w-modal-wide {
+.bcu-modal-wide {
 	@apply w-full max-w-[80%];
 }

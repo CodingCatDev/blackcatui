@@ -3,29 +3,29 @@
 @layer components {
 	/* === States === */
 
-	.avatar-base-styles {
+	.bcu-avatar-base-styles {
 		/* Core */
 		@apply w-32 h-32 rounded-full text-6xl;
 	}
 
 	/* === Avatar === */
 
-	.avatar {
-		@apply avatar-base-styles;
+	.bcu-avatar {
+		@apply bcu-avatar-base-styles;
 	}
 
 	/* Avatar: Sizes */
 	/* Note: Default values are built into `.avatar` */
-	.avatar-xs {
+	.bcu-avatar-xs {
 		@apply w-24 h-24 text-4xl;
 	}
-	.avatar-sm {
+	.bcu-avatar-sm {
 		@apply w-28 h-28 text-5xl;
 	}
-	.avatar-lg {
+	.bcu-avatar-lg {
 		@apply w-36 h-36 text-7xl;
 	}
-	.avatar-xl {
+	.bcu-avatar-xl {
 		@apply w-40 h-40 text-8xl;
 	}
 }

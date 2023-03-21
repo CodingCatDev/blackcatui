@@ -1,7 +1,7 @@
 /* Tailwind Elements: chips.css */
 
 @layer components {
-	.chip {
+	.bcu-chip {
 		@apply px-3 py-1.5 whitespace-nowrap cursor-pointer;
 		/* Text */
 		@apply text-xs text-center;
@@ -15,8 +15,8 @@
 		@apply transition-all;
 	}
 
-	.chip-disabled,
-	.chip:disabled {
+	.bcu-chip-disabled,
+	.bcu-chip:disabled {
 		@apply !opacity-50 !cursor-not-allowed active:scale-100;
 	}
 }
