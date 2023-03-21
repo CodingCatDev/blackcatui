@@ -19,18 +19,18 @@
 				<h2>Image Avatars</h2>
 				<DocsPreview>
 					<svelte:fragment slot="bcu-previewer-preview">
-						<div class="flex gap-8">
+						<div class="flex flex-col md:flex-row gap-2 md:gap-2">
 							<Avatar
 								{variant}
 								src="https://res.cloudinary.com/demo/image/twitter/1330457336.jpg"
 								alt="Bill Clinton"
-								class="avatar-xs"
+								class="bcu-avatar-xs"
 							/>
 							<Avatar
 								{variant}
 								src="https://res.cloudinary.com/demo/image/twitter/1330457336.jpg"
 								alt="Bill Clinton"
-								class="avatar-sm"
+								class="bcu-avatar-sm"
 							/>
 							<Avatar
 								{variant}
@@ -41,13 +41,13 @@
 								{variant}
 								src="https://res.cloudinary.com/demo/image/twitter/1330457336.jpg"
 								alt="Bill Clinton"
-								class="avatar-lg"
+								class="bcu-avatar-lg"
 							/>
 							<Avatar
 								{variant}
 								src="https://res.cloudinary.com/demo/image/twitter/1330457336.jpg"
 								alt="Bill Clinton"
-								class="avatar-xl"
+								class="bcu-avatar-xl"
 							/>
 						</div>
 					</svelte:fragment>
@@ -60,13 +60,13 @@
 	{variant}
 	src="https://res.cloudinary.com/demo/image/twitter/1330457336.jpg"
 	alt="Bill Clinton"
-	class="avatar-xs"
+	class="bcu-avatar-xs"
 />
 <Avatar
 	{variant}
 	src="https://res.cloudinary.com/demo/image/twitter/1330457336.jpg"
 	alt="Bill Clinton"
-	class="avatar-sm"
+	class="bcu-avatar-sm"
 />
 <Avatar
 	{variant}
@@ -77,13 +77,13 @@
 	{variant}
 	src="https://res.cloudinary.com/demo/image/twitter/1330457336.jpg"
 	alt="Bill Clinton"
-	class="avatar-lg"
+	class="bcu-avatar-lg"
 />
 <Avatar
 	{variant}
 	src="https://res.cloudinary.com/demo/image/twitter/1330457336.jpg"
 	alt="Bill Clinton"
-	class="avatar-xl"
+	class="bcu-avatar-xl"
 />
 				`}
 						/>
@@ -94,20 +94,20 @@
 				<h2>Letter Avatars</h2>
 				<DocsPreview>
 					<svelte:fragment slot="bcu-previewer-preview">
-						<div class="flex gap-8">
-							<Avatar {variant} class="avatar-xs">
+						<div class="flex flex-col md:flex-row gap-2 md:gap-2">
+							<Avatar {variant} class="bcu-avatar-xs">
 								<svelte:fragment slot="bcu-avatar-message">AJ</svelte:fragment>
 							</Avatar>
-							<Avatar {variant} class="avatar-sm">
+							<Avatar {variant} class="bcu-avatar-sm">
 								<svelte:fragment slot="bcu-avatar-message">AJ</svelte:fragment>
 							</Avatar>
 							<Avatar {variant}>
 								<svelte:fragment slot="bcu-avatar-message">AJ</svelte:fragment>
 							</Avatar>
-							<Avatar {variant} class="avatar-lg">
+							<Avatar {variant} class="bcu-avatar-lg">
 								<svelte:fragment slot="bcu-avatar-message">AJ</svelte:fragment>
 							</Avatar>
-							<Avatar {variant} class="avatar-xl">
+							<Avatar {variant} class="bcu-avatar-xl">
 								<svelte:fragment slot="bcu-avatar-message">AJ</svelte:fragment>
 							</Avatar>
 						</div>
@@ -117,19 +117,19 @@
 						<CodeBlock
 							language="html"
 							code={`
-<Avatar {variant} class="avatar-xs">
+<Avatar {variant} class="bcu-avatar-xs">
 	<svelte:fragment slot="bcu-avatar-message">AJ</svelte:fragment>
 </Avatar>
-<Avatar {variant} class="avatar-sm">
+<Avatar {variant} class="bcu-avatar-sm">
 	<svelte:fragment slot="bcu-avatar-message">AJ</svelte:fragment>
 </Avatar>
 <Avatar {variant}>
 	<svelte:fragment slot="bcu-avatar-message">AJ</svelte:fragment>
 </Avatar>
-<Avatar {variant} class="avatar-lg">
+<Avatar {variant} class="bcu-avatar-lg">
 	<svelte:fragment slot="bcu-avatar-message">AJ</svelte:fragment>
 </Avatar>
-<Avatar {variant} class="avatar-xl">
+<Avatar {variant} class="bcu-avatar-xl">
 	<svelte:fragment slot="bcu-avatar-message">AJ</svelte:fragment>
 </Avatar>
 				`}
