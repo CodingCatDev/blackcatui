@@ -59,6 +59,21 @@
 		scrollHeadingIntoView();
 	});
 	$: ({ currentTheme } = data);
+
+	// Modals
+	import Modal from '$lib/components/Utilities/Modal/Modal.svelte';
+	import ModalExampleEmbed from './(docs)/utilities/modal/examples/ModalExampleEmbed.svelte';
+	import ModalExampleImage from './(docs)/utilities/modal/examples/ModalExampleImage.svelte';
+	import ModalExampleList from './(docs)/utilities/modal/examples/ModalExampleList.svelte';
+	import type { ModalComponent } from '$lib/components/Utilities/Modal/types';
+
+	// Registered list of Components for Modals
+	const modalComponentRegistry: Record<string, ModalComponent> = {
+		// modalSearch: { ref: DocsSearch },
+		exampleEmbed: { ref: ModalExampleEmbed },
+		exampleImage: { ref: ModalExampleImage },
+		exampleList: { ref: ModalExampleList }
+	};
 </script>
 
 <svelte:head>
@@ -68,6 +83,7 @@
 
 <!-- Overlays -->
 <DocsDrawer navLinks={data.navLinks} />
+<Modal components={modalComponentRegistry} />
 
 <!-- App Shell -->
 <AppShell regionPage="overflow-y-scroll" slotPageFooter="pt-4 bg-surface-50-900-token">
