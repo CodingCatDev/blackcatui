@@ -1,6 +1,8 @@
 <script lang="ts">
 	// Logo
 	import AJAlt from '../DocsLogos/AJAlt.svelte';
+	import { Icon } from '@steeze-ui/svelte-icon';
+	import { Discord, Github, Twitter, Youtube } from '@steeze-ui/simple-icons';
 
 	// Base Classes
 	const cBase =
@@ -18,7 +20,7 @@
 			<div
 				class="grid grid-cols-1 gap-2 place-content-center place-items-center md:place-items-start"
 			>
-				<AJAlt />
+				<div class="w-16"><AJAlt /></div>
 				<p class="!text-sm opacity-80">
 					UI Toolkit for <a href="https://svelte.dev/">Svelte</a> +
 					<a href="https://tailwindcss.com/">Tailwind CSS</a>.
@@ -76,14 +78,14 @@
 				<span class="opacity-10 mx-2">|</span>
 				<a href="https://codingcat.dev/" target="_blank" rel="noreferrer">CodingCat.dev</a>
 			</p>
-			<div class="flex space-x-4">
+			<div class="flex gap-2">
 				<a
 					class="btn variant-soft"
 					href="https://github.com/CodingCatDev/blackcatui"
 					target="_blank"
 					rel="noreferrer"
 				>
-					<i class="fa-brands fa-github" />
+					<Icon src={Github} theme="solid" class="w-6" />
 					<span class="hidden md:inline-block ml-2">Github</span>
 				</a>
 				<a
@@ -92,7 +94,7 @@
 					target="_blank"
 					rel="noreferrer"
 				>
-					<i class="fa-brands fa-discord" />
+					<Icon src={Discord} theme="solid" class="w-6" />
 					<span class="hidden md:inline-block ml-2">Discord</span>
 				</a>
 				<a
@@ -101,7 +103,7 @@
 					target="_blank"
 					rel="noreferrer"
 				>
-					<i class="fa-brands fa-twitter" />
+					<Icon src={Twitter} theme="solid" class="w-6" />
 					<span class="hidden md:inline-block ml-2">Twitter</span>
 				</a>
 				<a
@@ -110,7 +112,7 @@
 					target="_blank"
 					rel="noreferrer"
 				>
-					<i class="fa-brands fa-youtube" />
+					<Icon src={Youtube} theme="solid" class="w-6" />
 					<span class="hidden md:inline-block ml-2">YouTube</span>
 				</a>
 			</div>

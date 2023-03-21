@@ -1,4 +1,9 @@
-<svg class="block w-12 h-12" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg
+	class="block w-full h-full"
+	viewBox="0 0 100 100"
+	fill="none"
+	xmlns="http://www.w3.org/2000/svg"
+>
 	<path
 		d="M42.0579 87.1361L29.0203 93.7991L29.1555 90.7818L39.2881 85.6022L41.9694 87.0813C42.0001 87.0978 42.0296 87.1161 42.0579 87.1361Z"
 		fill="#00E8FC"

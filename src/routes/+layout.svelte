@@ -25,10 +25,10 @@
 
 	// Components & Utilities
 	import AppShell from '$lib/components/Layout/AppShell/AppShell.svelte';
-	import AppBar from '$lib/components/Layout/AppBar/AppBar.svelte';
 	import DocsSideNav from './(docs)/DocsSideNav/DocsSideNav.svelte';
 	import DocsFooter from './(docs)/DocsFooter/DocsFooter.svelte';
 	import DocsAppBar from './(docs)/DocsAppBar/DocsAppBar.svelte';
+	import DocsDrawer from './(docs)/DocsDrawer/DocsDrawer.svelte';
 	import { browser } from '$app/environment';
 
 	// Set body `data-theme` based on current theme status
@@ -65,6 +65,10 @@
 	<!-- Select Preset Theme CSS DO NOT REMOVE ESCAPES-->
 	{@html `\<style\>${currentTheme}}\</style\>`}
 </svelte:head>
+
+<!-- Overlays -->
+<DocsDrawer navLinks={data.navLinks} />
+
 <!-- App Shell -->
 <AppShell regionPage="overflow-y-scroll" slotPageFooter="pt-4 bg-surface-50-900-token">
 	<!-- Header -->
@@ -74,7 +78,7 @@
 
 	<!-- Sidebar (Left) -->
 	<svelte:fragment slot="bcu-app-shell-sidebar-left">
-		<DocsSideNav navLinks={data.navLinks} />
+		<DocsSideNav class="hidden lg:grid w-[360px] overflow-hidden" navLinks={data.navLinks} />
 	</svelte:fragment>
 
 	<!-- Page Content -->

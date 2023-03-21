@@ -51,9 +51,9 @@
 	const cRowMain = 'grid items-center';
 	const cRowHeadline = '';
 	// ---
-	const cSlotLead = 'flex-none flex justify-between items-center';
+	const cSlotLead = 'flex-none flex justify-between items-center gap-1';
 	const cSlotDefault = 'flex-auto';
-	const cSlotTrail = 'flex-none flex items-center space-x-4';
+	const cSlotTrail = 'flex-none flex items-center gap-1';
 
 	// Reactive Classes
 	$: classesBase = `${cBase} ${background} ${border} ${spacing} ${padding} ${shadow} ${
