@@ -78,6 +78,10 @@
 <AppBar shadow="shadow-xl">
 	<svelte:fragment slot="bcu-app-bar-lead">
 		<div class="flex items-center gap-2">
+			<!-- Hamburger Menu -->
+			<button on:click={drawerOpen} class="w-10 lg:!hidden">
+				<Icon src={Bars3} theme="solid" />
+			</button>
 			<!-- Logo -->
 			<a class="lg:!ml-0 w-12 lg:w-16 overflow-hidden" href="/" title="Go to Homepage">
 				<AjAlt />
@@ -175,10 +179,5 @@
 				<span class="hidden md:inline-block">Sponsor</span>
 			</a>
 		</div>
-
-		<!-- Hamburger Menu -->
-		<button on:click={drawerOpen} class="w-10 lg:!hidden">
-			<Icon src={Bars3} theme="solid" />
-		</button>
 	</svelte:fragment>
 </AppBar>

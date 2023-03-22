@@ -19,7 +19,7 @@
 	/** Set the anchor position.
 	 * @type {'left' | 'top' | 'right' | 'bottom'}
 	 */
-	export let position: 'left' | 'top' | 'right' | 'bottom' = 'right';
+	export let position: 'left' | 'top' | 'right' | 'bottom' = 'left';
 	/** Define the Svelte transition animation duration. */
 	export let duration = 200;
 
