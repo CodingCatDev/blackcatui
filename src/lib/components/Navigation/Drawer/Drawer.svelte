@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { fade, fly } from 'svelte/transition';
-	import { createEventDispatcher, onMount } from 'svelte';
+	import { afterUpdate, createEventDispatcher, onMount } from 'svelte';
 
 	// Event Handler
 	const dispatch = createEventDispatcher();
@@ -138,67 +138,60 @@
 	}
 
 	// Swipping
-	let swipe = {
-		moving: false,
-		startX: 0,
-		startY: 0,
-		endX: 0,
-		endY: 0
-	};
+	let moving = false;
+	let translateX = 0;
+	let touchStartX = 0;
 
-	function handleSwipeStart(event: TouchEvent | MouseEvent) {
-		swipe.moving = true;
-		if (event instanceof TouchEvent && event?.touches) {
-			swipe.startX = event.touches[0].clientX;
-			swipe.startY = event.touches[0].clientY;
-		} else if (event instanceof MouseEvent) {
-			console.log(event.movementX);
-			swipe.startX = event.clientX;
-			swipe.startY = event.clientY;
+	function handleTouchStart(event: TouchEvent) {
+		moving = true;
+		touchStartX = event.touches[0].clientX;
+	}
+	function handleTouchMove(event: TouchEvent) {
+		if (moving) {
+			const eventX = event.touches[0].clientX;
+			const movementX = eventX - touchStartX;
+			if (drawerWidth >= movementX && movementX >= 0) translateX = movementX;
 		}
 	}
-	// function handleMouseMove(event: MouseEvent) {
-	// 	if (swipe.moving) {
-	// 		const rect = elemDrawer.getBoundingClientRect();
-	// 		const moveLeft = rect.left + event.movementX;
-	// 		elemDrawer.style.left = `${moveLeft}px`;
-	// 		// top += event.movementY;
-	// 	}
-	// }
-	function handleSwipeEnd(event: TouchEvent | MouseEvent) {
-		swipe.moving = false;
-		console.log(swipe);
-
-		if (event instanceof TouchEvent && event?.touches) {
-			swipe.endX = event.changedTouches[0].clientX;
-			swipe.endY = event.changedTouches[0].clientY;
-		} else if (event instanceof MouseEvent) {
-			swipe.endX = event.clientX;
-			swipe.endY = event.clientY;
+	function handleTouchEnd(event: TouchEvent) {
+		moving = false;
+	}
+	function handleMouseDown(event: MouseEvent) {
+		moving = true;
+		const drawerRect = elemDrawer.getBoundingClientRect();
+		translateX = drawerRect.x;
+	}
+	function handleMouseMove(event: MouseEvent) {
+		if (moving) {
+			//See if original movement is in correct direction
+			switch (position) {
+				case 'top':
+					break;
+				case 'bottom':
+					break;
+				case 'left':
+					break;
+				case 'right':
+					if (translateX / drawerWidth > 0.8) {
+						moving = false;
+						drawerStore.close();
+						break;
+					}
+					if (drawerWidth > translateX && translateX > 0) translateX += event.movementX;
+					break;
+			}
 		}
-
-		const deltaX = swipe.endX - swipe.startX;
-		const deltaY = swipe.endY - swipe.startY;
-
-		if (position === 'right' && deltaX > 0) {
-			// swipe right
-			drawerStore.close();
-		} else if (position === 'left' && deltaX < 0) {
-			// swipe left
-			drawerStore.close();
-		}
-		if (position === 'bottom' && deltaY > 0) {
-			// swipe right
-			drawerStore.close();
-		} else if (position === 'top' && deltaY < 0) {
-			// swipe left
-			drawerStore.close();
-		}
+	}
+	function handleMouseUp(event: MouseEvent) {
+		moving = false;
 	}
 
 	// Drawer Subscription
 	drawerStore.subscribe((settings: DrawerSettings) => {
-		if (settings.open !== true) return;
+		if (settings.open !== true) {
+			translateX = 0;
+			return;
+		}
 		applyPropSettings(settings);
 		applyAnimationSettings();
 	});
@@ -233,16 +226,19 @@
 		<div
 			bind:this={elemDrawer}
 			bind:clientWidth={drawerWidth}
-			on:touchstart|passive={handleSwipeStart}
-			on:touchend|passive={handleSwipeEnd}
-			on:mousedown={handleSwipeStart}
-			on:mouseup={handleSwipeEnd}
+			on:touchstart|passive={handleTouchStart}
+			on:touchend|passive={handleTouchEnd}
+			on:touchmove|passive={handleTouchMove}
+			on:mousedown={handleMouseDown}
+			on:mouseup={handleMouseUp}
+			on:mousemove={handleMouseMove}
 			class="bcu-drawer {classesDrawer}"
 			data-testid="bcu-drawer"
 			role="dialog"
 			aria-modal="true"
 			aria-labelledby={labelledby}
 			aria-describedby={describedby}
+			style="transform: translate3d({translateX}px, 0, 0);{moving ? 'transition: none' : ''}"
 			transition:fly|local={{ x: anim.x, y: anim.y, duration }}
 		>
 			<!-- Slot: Default -->
