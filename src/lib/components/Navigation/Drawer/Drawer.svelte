@@ -21,7 +21,7 @@
 	 */
 	export let position: 'left' | 'top' | 'right' | 'bottom' = 'right';
 	/** Define the Svelte transition animation duration. */
-	export let duration = 150;
+	export let duration = 200;
 
 	// Props (backdrop)
 	/** Backdrop - Provide classes to set the backdrop background color */
@@ -75,6 +75,7 @@
 	// Local
 	let elemBackdrop: HTMLElement;
 	let elemDrawer: HTMLElement;
+	let drawerWidth = 0;
 	let anim = { x: 0, y: 0 };
 
 	// Record a record of default props on init
@@ -136,6 +137,65 @@
 		if (event.code === 'Escape') drawerStore.close();
 	}
 
+	// Swipping
+	let swipe = {
+		moving: false,
+		startX: 0,
+		startY: 0,
+		endX: 0,
+		endY: 0
+	};
+
+	function handleSwipeStart(event: TouchEvent | MouseEvent) {
+		swipe.moving = true;
+		if (event instanceof TouchEvent && event?.touches) {
+			swipe.startX = event.touches[0].clientX;
+			swipe.startY = event.touches[0].clientY;
+		} else if (event instanceof MouseEvent) {
+			console.log(event.movementX);
+			swipe.startX = event.clientX;
+			swipe.startY = event.clientY;
+		}
+	}
+	// function handleMouseMove(event: MouseEvent) {
+	// 	if (swipe.moving) {
+	// 		const rect = elemDrawer.getBoundingClientRect();
+	// 		const moveLeft = rect.left + event.movementX;
+	// 		elemDrawer.style.left = `${moveLeft}px`;
+	// 		// top += event.movementY;
+	// 	}
+	// }
+	function handleSwipeEnd(event: TouchEvent | MouseEvent) {
+		swipe.moving = false;
+		console.log(swipe);
+
+		if (event instanceof TouchEvent && event?.touches) {
+			swipe.endX = event.changedTouches[0].clientX;
+			swipe.endY = event.changedTouches[0].clientY;
+		} else if (event instanceof MouseEvent) {
+			swipe.endX = event.clientX;
+			swipe.endY = event.clientY;
+		}
+
+		const deltaX = swipe.endX - swipe.startX;
+		const deltaY = swipe.endY - swipe.startY;
+
+		if (position === 'right' && deltaX > 0) {
+			// swipe right
+			drawerStore.close();
+		} else if (position === 'left' && deltaX < 0) {
+			// swipe left
+			drawerStore.close();
+		}
+		if (position === 'bottom' && deltaY > 0) {
+			// swipe right
+			drawerStore.close();
+		} else if (position === 'top' && deltaY < 0) {
+			// swipe left
+			drawerStore.close();
+		}
+	}
+
 	// Drawer Subscription
 	drawerStore.subscribe((settings: DrawerSettings) => {
 		if (settings.open !== true) return;
@@ -172,6 +232,11 @@
 		<!-- Drawer -->
 		<div
 			bind:this={elemDrawer}
+			bind:clientWidth={drawerWidth}
+			on:touchstart|passive={handleSwipeStart}
+			on:touchend|passive={handleSwipeEnd}
+			on:mousedown={handleSwipeStart}
+			on:mouseup={handleSwipeEnd}
 			class="bcu-drawer {classesDrawer}"
 			data-testid="bcu-drawer"
 			role="dialog"
