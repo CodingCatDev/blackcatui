@@ -1,9 +1,24 @@
 import { sveltekit } from '@sveltejs/kit/vite';
-import { defineConfig } from 'vitest/config';
+import type { UserConfig } from 'vite';
+import { configDefaults } from 'vitest/config';
+import sveld from 'vite-plugin-sveld';
 
-export default defineConfig({
-	plugins: [sveltekit()],
+// Import package.json version
+import { readFileSync } from 'fs';
+const json = readFileSync('package.json', 'utf8');
+const pkg = JSON.parse(json);
+
+/** @type {import('vite').UserConfig} */
+const config: UserConfig = {
+	plugins: [sveltekit(), sveld()],
+	define: {
+		__PACKAGE__: pkg
+	},
 	test: {
-		include: ['src/**/*.{test,spec}.{js,ts}']
+		globals: true,
+		environment: 'jsdom',
+		exclude: [...configDefaults.exclude, '**/package/**', '**/build/**']
 	}
-});
+};
+
+export default config;
