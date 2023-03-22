@@ -67,8 +67,8 @@
 </script>
 
 <div
-	class="app-bar {classesBase}"
-	data-testid="app-bar"
+	class="bcu-app-bar {classesBase}"
+	data-testid="bcu-app-bar"
 	role="toolbar"
 	aria-label={label}
 	aria-labelledby={labelledby}
