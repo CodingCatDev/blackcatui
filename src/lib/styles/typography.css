@@ -35,7 +35,7 @@
 
 	a:not(.unstyled):not(.permalink):is(:not(.prose *)):not(.bcu-button):not(.bcu-button-icon):not(
 			.bcu-app-bar a
-		):not(.logo-item):not(a.card):not(.bcu-list-nav a) {
+		):not(.logo-item):not(a.bcu-card):not(.bcu-list-nav a) {
 		@apply text-primary-700 dark:text-primary-500 hover:brightness-110 underline;
 	}
 
