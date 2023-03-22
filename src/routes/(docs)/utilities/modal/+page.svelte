@@ -1,7 +1,4 @@
 <script lang="ts">
-	import { Icon } from '@steeze-ui/svelte-icon';
-	import { CheckCircle } from '@steeze-ui/heroicons';
-
 	// Core
 	import CodeBlock from '$lib/components/DataDisplay/CodeBlock/CodeBlock.svelte';
 	import DocsLayout from '../../DocsLayout/DocsLayout.svelte';
