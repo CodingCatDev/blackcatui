@@ -7,7 +7,7 @@
 	import ListBoxItem from '$lib/components/DataDisplay/List/ListItem.svelte';
 	import CodeBlock from '$lib/components/DataDisplay/CodeBlock/CodeBlock.svelte';
 	// Sveld
-	import sveldTableOfContents from '$lib/components/TableOfContents/TableOfContents.svelte?raw&sveld';
+	import sveldTableOfContents from '$lib/components/DataDisplay/TableOfContents/TableOfContents.svelte?raw&sveld';
 
 	// Docs Shell
 	const settings: DocsShellSettings = {
@@ -24,11 +24,10 @@
 </script>
 
 <DocsShell {settings}>
-	<!-- Slot: Sandbox -->
-	<svelte:fragment slot="sandbox">
+	<section class="flex flex-col gap-4">
 		<DocsPreview>
-			<svelte:fragment slot="preview">
-				<div class="card p-4 text-token rounded-container-token w-96">
+			<svelte:fragment slot="bcu-previewer-preview">
+				<div class="bcu-card p-4 text-token rounded-container-token w-96">
 					<p class="font-bold pb-4 ml-4">On This Page</p>
 					<ListBox
 						active="variant-filled-primary"
@@ -44,17 +43,14 @@
 					</ListBox>
 				</div>
 			</svelte:fragment>
-			<svelte:fragment slot="footer">
+			<svelte:fragment slot="bcu-previewer-footer">
 				<p class="w-full text-center">Please note the example above is simulated.</p>
 			</svelte:fragment>
-			<svelte:fragment slot="source">
+			<svelte:fragment slot="bcu-previewer-source">
 				<CodeBlock language="html" code={`<TableOfContents target="#toc-target" />`} />
 			</svelte:fragment>
 		</DocsPreview>
-	</svelte:fragment>
 
-	<!-- Slot: Usage -->
-	<svelte:fragment slot="usage">
 		<p>
 			Add the component to a page, set the target property, then a list of links will be
 			auto-generated based on HTML headings.
@@ -124,5 +120,5 @@
 			<!-- prettier-ignore -->
 			<p>See Tailwind's documentation on <a href="https://tailwindcss.com/docs/position#sticky-positioning-elements" target="_blank" rel="noreferrer">sticky positioning</a> if you wish to keep the Table of Contents component visible during scrolling.</p>
 		</section>
-	</svelte:fragment>
+	</section>
 </DocsShell>
