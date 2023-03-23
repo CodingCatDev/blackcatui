@@ -19,7 +19,7 @@
 		name: 'Radio Group',
 		description: 'Capture feedback limited to a small set of options.',
 		imports: ['RadioGroup', 'RadioItem'],
-		source: 'components/Radio',
+		source: 'components/Inputs/Radio',
 		aria: 'https://www.w3.org/WAI/ARIA/apg/patterns/radiobutton/',
 		restProps: 'RadioItem input',
 		components: [
