@@ -17,7 +17,7 @@
 
 	$: classesBase = `p-4 pb-20 space-y-4 overflow-y-auto ${$$props.class ?? ''}`;
 	$: classesActive = (href: string) =>
-		$storeCurrentUrl?.includes(href) ? 'bg-primary-active-token' : '';
+		$storeCurrentUrl?.split('/').at(-1) === href ? 'bg-primary-active-token' : '';
 </script>
 
 <!-- Nav Links -->

@@ -15,13 +15,21 @@ export const load = (async ({ cookies }) => {
 	];
 	for (const path in modules) {
 		const splitPath = path.split('/');
-		const groupPath = splitPath.at(-3)?.toLowerCase() || '';
+		const groupPath =
+			splitPath
+				.at(-3)
+				?.replace(/[A-Z]/g, (match, offset) => (offset > 0 ? '-' : '') + match.toLowerCase())
+				.toLowerCase() || '';
 		const group =
 			splitPath
 				.at(-3)
 				?.replace(/([A-Z])/g, ' $1')
 				.slice(1) || '';
-		const itemPath = splitPath.at(-1)?.replace('.svelte', '')?.toLowerCase() || '';
+		const itemPath =
+			splitPath
+				.at(-1)
+				?.replace('.svelte', '')
+				?.replace(/[A-Z]/g, (match, offset) => (offset > 0 ? '-' : '') + match.toLowerCase()) || '';
 		const item = splitPath
 			.at(-1)
 			?.replace('.svelte', '')
