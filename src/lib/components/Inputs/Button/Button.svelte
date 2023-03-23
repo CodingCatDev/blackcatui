@@ -40,27 +40,42 @@
 	$: classesSlotEndIcon = `${slotEndIcon}`;
 </script>
 
-<button
-	class="bcu-button {classesBase}"
-	data-testid="bcu-button"
-	aria-label={label}
-	aria-labelledby={labelledby}
-	on:click
->
-	<!-- Start Icon -->
-	{#if $$slots['bcu-button-start-icon']}
-		<div class="bcu-button-icon {classesSlotStartIcon}"><slot name="bcu-button-start-icon" /></div>
-	{/if}
+{#if !$$slots['bcu-button-message'] && $$slots['bcu-button-start-icon'] && !$$slots['bcu-button-start-icon']}
+	<button
+		class="bcu-button-icon {classesBase}"
+		data-testid="bcu-button-icon"
+		aria-label={label}
+		aria-labelledby={labelledby}
+		on:click
+	>
+		<!-- Start Icon -->
+		{#if $$slots['bcu-button-start-icon']}
+			<slot name="bcu-button-start-icon" class={classesSlotStartIcon} />
+		{/if}
+	</button>
+{:else}
+	<button
+		class="bcu-button {classesBase}"
+		data-testid="bcu-button"
+		aria-label={label}
+		aria-labelledby={labelledby}
+		on:click
+	>
+		<!-- Start Icon -->
+		{#if $$slots['bcu-button-start-icon']}
+			<div class={classesSlotStartIcon}><slot name="bcu-button-start-icon" /></div>
+		{/if}
 
-	<!-- Slot: message -->
-	{#if $$slots['bcu-button-message']}
-		<div class="button-message bcu-button-message {classesSlotMessage}">
-			<slot name="bcu-button-message" />
-		</div>
-	{/if}
+		<!-- Slot: message -->
+		{#if $$slots['bcu-button-message']}
+			<div class="button-message bcu-button-message {classesSlotMessage}">
+				<slot name="bcu-button-message" />
+			</div>
+		{/if}
 
-	<!-- End Icon -->
-	{#if $$slots['bcu-button-end-icon']}
-		<div class="bcu-button-icon {classesSlotEndIcon}"><slot name="bcu-button-end-icon" /></div>
-	{/if}
-</button>
+		<!-- End Icon -->
+		{#if $$slots['bcu-button-end-icon']}
+			<div class={classesSlotEndIcon}><slot name="bcu-button-end-icon" /></div>
+		{/if}
+	</button>
+{/if}

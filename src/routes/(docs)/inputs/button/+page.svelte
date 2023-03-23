@@ -31,16 +31,93 @@
 <DocsShell {settings}>
 	<section class="flex flex-col gap-10">
 		<div class="flex flex-col gap-4">
+			<h2>Icon Button</h2>
+			<DocsPreview>
+				<svelte:fragment slot="bcu-previewer-preview">
+					<Button
+						{variant}
+						class="aspect-square"
+						slotStartIcon="w-8 h-8 aspect-square"
+						on:click={triggerAction}
+					>
+						<!-- Start Icon -->
+						<svelte:fragment slot="bcu-button-start-icon">
+							<Icon src={CheckCircle} theme="solid" />
+						</svelte:fragment>
+					</Button>
+				</svelte:fragment>
+				<svelte:fragment slot="bcu-previewer-footer">
+					<div class="flex justify-center gap-4">
+						<select bind:value={variant} class="select w-auto">
+							{#each variants as vSet}
+								<optgroup label={vSet.label}>
+									{#each vSet.list as v}
+										<option value={v}>{v}</option>
+									{/each}
+								</optgroup>
+							{/each}
+						</select>
+					</div>
+				</svelte:fragment>
+				<svelte:fragment slot="bcu-previewer-source">
+					<CodeBlock
+						language="html"
+						code={`
+<!-- Start Icon -->
+<Button {variant} slotIcon="w-8" on:click={triggerAction}>
+	<svelte:fragment slot="bcu-button-start-icon">
+		(svg)
+	</svelte:fragment>
+</Button>
+
+<!-- Message -->
+<Button {variant} on:click={triggerAction}>
+	<svelte:fragment slot="bcu-button-message">
+		(message)
+	</svelte:fragment>
+</Button>
+
+<!-- Start Icon / Message -->
+<Button {variant} on:click={triggerAction}>
+	<svelte:fragment slot="bcu-button-start-icon">
+		(svg)
+	</svelte:fragment>
+	<svelte:fragment slot="bcu-button-message">
+		(message)
+	</svelte:fragment>
+</Button>
+
+<!-- Message / End Icon -->
+<Button {variant} on:click={triggerAction}>
+	<svelte:fragment slot="bcu-button-message">
+		(message)
+	</svelte:fragment>
+	<svelte:fragment slot="bcu-button-end-icon">
+		(svg)
+	</svelte:fragment>
+</Button>
+
+<!-- Start Icon / Message / End Icon -->
+<Button {variant} on:click={triggerAction}>
+	<svelte:fragment slot="bcu-button-start-icon">
+		(svg)
+	</svelte:fragment>
+	<svelte:fragment slot="bcu-button-message">
+		(message)
+	</svelte:fragment>
+	<svelte:fragment slot="bcu-button-end-icon">
+		(svg)
+	</svelte:fragment>
+</Button>
+				`}
+					/>
+				</svelte:fragment>
+			</DocsPreview>
+
 			<h2>Button</h2>
 			<DocsPreview>
 				<svelte:fragment slot="bcu-previewer-preview">
 					<div class="flex gap-8">
-						<Button {variant} slotIcon="w-8" on:click={triggerAction}>
-							<!-- Start Icon -->
-							<svelte:fragment slot="bcu-button-start-icon">
-								<Icon src={CheckCircle} theme="solid" class="w-6" />
-							</svelte:fragment>
-						</Button>
 						<Button {variant} on:click={triggerAction}>
 							<!-- Message -->
 							<svelte:fragment slot="bcu-button-message">

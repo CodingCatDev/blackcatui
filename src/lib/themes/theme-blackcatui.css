@@ -7,7 +7,7 @@
 	--theme-font-family-heading: 'Quicksand', sans-serif;
 	--theme-font-color-base: var(--color-surface-900);
 	--theme-font-color-dark: var(--color-tertiary-50);
-	--theme-rounded-base: 5px;
+	--theme-rounded-base: 999999px;
 	--theme-rounded-container: 12px;
 	--theme-border-base: 3px;
 	/* =~= Theme On-X Colors =~= */
