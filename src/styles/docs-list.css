@@ -1,11 +1,9 @@
-/* Tailwind Elements: button.css */
-
 @layer components {
 	/* === Lists (Parents) === */
 
-	.bcu-list,
-	.bcu-list-dl,
-	.bcu-list-nav ul {
+	.bcu-docs-list,
+	.bcu-docs-list-dl,
+	.bcu-docs-list-nav ul {
 		/* List Style */
 		@apply list-none;
 		/* Spacing */
@@ -14,8 +12,7 @@
 
 	/* === List Items (Children) === */
 
-	.bcu-list li {
-		/* @apply bg-red-500; */
+	.bcu-docs-list li {
 		@apply flex items-center space-x-4 whitespace-nowrap;
 		/* Padding */
 		@apply p-2;
@@ -23,8 +20,7 @@
 		@apply rounded-token;
 	}
 
-	.bcu-list-dl div {
-		/* @apply bg-blue-500; */
+	.bcu-docs-list-dl div {
 		@apply flex items-center space-x-4 whitespace-nowrap;
 		/* Padding */
 		@apply p-2;
@@ -32,17 +28,21 @@
 		@apply rounded-token;
 	}
 
-	.bcu-list-nav a,
-	.bcu-list-nav button,
-	.bcu-list-option {
+	.bcu-docs-list-nav a,
+	.bcu-docs-list-nav button,
+	.bcu-docs-list-option {
 		@apply flex items-center space-x-4 whitespace-nowrap;
 		/* Padding */
 		@apply px-4 py-2;
 		/* Hover */
 		@apply bg-primary-hover-token;
+		/* Focus */
+		@apply outline-none focus:ring-outline-token;
 		/* Cursor */
 		@apply cursor-pointer;
 		/* Theme: Rounded */
 		@apply rounded-token;
+		/* Override typograpy */
+		@apply !no-underline !text-on-primary-token;
 	}
 }

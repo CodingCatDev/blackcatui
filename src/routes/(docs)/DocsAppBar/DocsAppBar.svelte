@@ -113,7 +113,7 @@
 						<h6>Mode</h6>
 						<LightSwitch />
 					</section>
-					<nav class="bcu-list-nav p-4 -m-4 max-h-64 lg:max-h-[500px] overflow-y-auto">
+					<nav class="bcu-docs-list-nav p-4 -m-4 max-h-64 lg:max-h-[500px] overflow-y-auto">
 						<form action="/?/setTheme" method="POST" use:enhance={setTheme}>
 							<ul>
 								{#each themes as { icon, name, type }}

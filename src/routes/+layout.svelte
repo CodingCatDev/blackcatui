@@ -17,9 +17,6 @@
 	import { storePopup } from '$lib/components/Utilities/Popup/popup';
 	storePopup.set({ computePosition, autoUpdate, flip, shift, offset, arrow });
 
-	// Theme
-	// BlackCatUI Stylesheets
-	import '$lib/styles/all.css';
 	// Global Stylesheets
 	import '../app.postcss';
 

@@ -29,7 +29,7 @@
 		</div>
 		{#if navLink?.items && navLink?.items?.length > 0}
 			<!-- Navigation List -->
-			<nav class="bcu-list-nav">
+			<nav class="bcu-docs-list-nav">
 				<ul>
 					{#each navLink.items as item}
 						<li on:click={onListItemClick} on:keypress>
