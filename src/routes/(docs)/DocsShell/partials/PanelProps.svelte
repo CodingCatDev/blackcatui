@@ -19,9 +19,9 @@
 <div class="bcu-doc-shell-properties {classesBase}">
 	<!-- RestProps -->
 	{#if pageData.restProps}
-		<aside class="alert variant-ghost-warning">
+		<aside class="bcu-alert variant-ghost-warning">
 			<!-- prettier-ignore -->
-			<div class="alert-message">
+			<div class="bcu-alert-message">
 				<p>This component implements <a href="https://svelte.dev/docs#template-syntax-attributes-and-props" target="_blank" rel="noreferrer">restProps</a>. This passes all extra attributes to the component's <code>{pageData.restProps}</code> elements.</p>
 			</div>
 		</aside>
