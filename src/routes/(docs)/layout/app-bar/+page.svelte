@@ -19,7 +19,7 @@
 		feature: DocsFeature.Component,
 		name: 'App Bar',
 		description:
-			'A header element for the top of your page layout. Pairs well with the <a href="/components/app-shell">App Shell</a>.',
+			'A header element for the top of your page layout. Pairs well with the <a href="/layout/app-shell">App Shell</a>.',
 		imports: ['AppBar'],
 		source: 'components/Layout/AppBar',
 		aria: 'https://www.w3.org/WAI/ARIA/apg/patterns/toolbar/',
