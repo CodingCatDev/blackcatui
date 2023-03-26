@@ -8,7 +8,6 @@
 	import CodeBlock from '$lib/components/DataDisplay/CodeBlock/CodeBlock.svelte';
 	// Sveld
 	import sveldRadioGroup from '$lib/components/Inputs/Radio/RadioGroup.svelte?raw&sveld';
-	import sveldRadioItem from '$lib/components/Inputs/Radio/RadioItem.svelte?raw&sveld';
 
 	import { Icon } from '@steeze-ui/svelte-icon';
 	import { Bars3BottomLeft, Bars3, Bars3BottomRight } from '@steeze-ui/heroicons';
@@ -17,19 +16,13 @@
 	const settings: DocsShellSettings = {
 		feature: DocsFeature.Component,
 		name: 'Radio Group',
-		description: 'Capture feedback limited to a small set of options.',
+		description:
+			'Capture feedback limited to a small set of options. Utilizes <a href="/inputs/radio-item/">RadioItem</a>',
 		imports: ['RadioGroup', 'RadioItem'],
 		source: 'components/Inputs/Radio',
 		aria: 'https://www.w3.org/WAI/ARIA/apg/patterns/radiobutton/',
 		restProps: 'RadioItem input',
-		components: [
-			{ label: 'RadioGroup', sveld: sveldRadioGroup },
-			{
-				label: 'RadioItem',
-				sveld: sveldRadioItem,
-				overrideProps: ['padding', 'hover', 'accent', 'color', 'fill', 'rounded']
-			}
-		],
+		components: [{ label: 'RadioGroup', sveld: sveldRadioGroup }],
 		keyboard: [
 			['<kbd>Tab</kbd>', 'Moves focus to the next focusable RadioItem.'],
 			['<kbd>Shift + Tab</kbd> ', 'Moves focus to the previous focusable RadioItem.'],
@@ -132,15 +125,6 @@
 			<h2>Full Width</h2>
 			<p>Set <em>display</em> to <code>flex</code> to stretch and fill the full width.</p>
 			<CodeBlock language="html" code={`<RadioGroup display="flex">...</RadioGroup>`} />
-		</section>
-		<section class="space-y-4">
-			<h2>Radio Attributes</h2>
-			<p>
-				The Radio Item component supports Svelte's <code>$$restProps</code>, which allows for
-				<em>required</em>, <em>disabled</em>, and any other valid radio input attributes. Please
-				note these settings are applied per item.
-			</p>
-			<CodeBlock language="html" code={`<RadioItem ... required disabled />`} />
 		</section>
 	</section>
 </DocsShell>
