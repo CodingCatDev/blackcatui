@@ -2,30 +2,26 @@
 	import DocsShell from '../../DocsShell/DocsShell.svelte';
 	import { DocsFeature, type DocsShellSettings } from '../../DocsShell/types';
 	import DocsPreview from '../../DocsPreview/DocsPreview.svelte';
+	import { Icon } from '@steeze-ui/svelte-icon';
+	import { BookOpen, Film, Tv } from '@steeze-ui/heroicons';
+
 	// Components
 	import CodeBlock from '$lib/components/DataDisplay/CodeBlock/CodeBlock.svelte';
 	import List from '$lib/components/DataDisplay/List/List.svelte';
 	import ListItem from '$lib/components/DataDisplay/List/ListItem.svelte';
 	// Sveld
 	import sveldList from '$lib/components/DataDisplay/List/List.svelte?raw&sveld';
-	import sveldListItem from '$lib/components/DataDisplay/List/ListItem.svelte?raw&sveld';
 
 	// Docs Shell
 	const settings: DocsShellSettings = {
 		feature: DocsFeature.Component,
 		name: 'List',
-		description: 'Interactive list that maintains selection state.',
+		description:
+			'Interactive list that maintains selection state, utilizes <a href="/data-display/list-item">ListItem</a>',
 		imports: ['List', 'ListItem'],
 		source: 'components/List',
 		aria: 'https://www.w3.org/WAI/ARIA/apg/patterns/listbox/',
-		components: [
-			{ label: 'List', sveld: sveldList },
-			{
-				label: 'ListItem',
-				sveld: sveldListItem,
-				overrideProps: ['rounded', 'active', 'hover', 'padding']
-			}
-		],
+		components: [{ label: 'List', sveld: sveldList }],
 		keyboard: [
 			['<kbd>Tab</kbd>', 'Focus the next list item.'],
 			['<kbd>Shift + Tab</kbd> ', 'Focus the previous list item.'],
@@ -46,21 +42,21 @@
 					<label for="" class="space-y-4">
 						<List>
 							<ListItem bind:group={valueSingle} name="medium" value="books">
-								<svelte:fragment slot="bcu-list-lead"
-									><i class="fa-solid fa-book w-6 text-center" /></svelte:fragment
-								>
+								<svelte:fragment slot="bcu-list-lead">
+									<Icon src={BookOpen} theme="solid" class="w-6" />
+								</svelte:fragment>
 								Books
 							</ListItem>
 							<ListItem bind:group={valueSingle} name="medium" value="movies">
-								<svelte:fragment slot="bcu-list-lead"
-									><i class="fa-solid fa-film w-6 text-center" /></svelte:fragment
-								>
+								<svelte:fragment slot="bcu-list-lead">
+									<Icon src={Film} theme="solid" class="w-6" />
+								</svelte:fragment>
 								Movies
 							</ListItem>
 							<ListItem bind:group={valueSingle} name="medium" value="television">
-								<svelte:fragment slot="bcu-list-lead"
-									><i class="fa-solid fa-tv w-6 text-center" /></svelte:fragment
-								>
+								<svelte:fragment slot="bcu-list-lead">
+									<Icon src={Tv} theme="solid" class="w-6" />
+								</svelte:fragment>
 								Television
 							</ListItem>
 						</List>
@@ -106,21 +102,21 @@
 						class="w-full max-w-[480px]"
 					>
 						<ListItem bind:group={valueMultiple} name="medium" value="books">
-							<svelte:fragment slot="bcu-list-lead"
-								><i class="fa-solid fa-book w-6 text-center" /></svelte:fragment
-							>
+							<svelte:fragment slot="bcu-list-lead">
+								<Icon src={BookOpen} theme="solid" class="w-6" />
+							</svelte:fragment>
 							Books
 						</ListItem>
 						<ListItem bind:group={valueMultiple} name="medium" value="movies">
-							<svelte:fragment slot="bcu-list-lead"
-								><i class="fa-solid fa-film w-6 text-center" /></svelte:fragment
-							>
+							<svelte:fragment slot="bcu-list-lead">
+								<Icon src={Film} theme="solid" class="w-6" />
+							</svelte:fragment>
 							Movies
 						</ListItem>
 						<ListItem bind:group={valueMultiple} name="medium" value="television">
-							<svelte:fragment slot="bcu-list-lead"
-								><i class="fa-solid fa-tv w-6 text-center" /></svelte:fragment
-							>
+							<svelte:fragment slot="bcu-list-lead">
+								<Icon src={Tv} theme="solid" class="w-6" />
+							</svelte:fragment>
 							Television
 						</ListItem>
 					</List>
