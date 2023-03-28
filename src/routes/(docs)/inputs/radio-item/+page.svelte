@@ -15,8 +15,8 @@
 	// Docs Shell
 	const settings: DocsShellSettings = {
 		feature: DocsFeature.Component,
-		name: 'Radio Group',
-		description: 'Itmes for <a href="/inputs/radio-group/">RadioGroup</a>',
+		name: 'Radio Item',
+		description: 'Item for <a href="/inputs/radio-group/">RadioGroup</a>',
 		imports: ['RadioItem'],
 		source: 'components/Inputs/Radio',
 		aria: 'https://www.w3.org/WAI/ARIA/apg/patterns/radiobutton/',
