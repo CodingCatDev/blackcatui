@@ -4,12 +4,12 @@
 	import DocsPreview from '../../DocsPreview/DocsPreview.svelte';
 	// Components
 	import CodeBlock from '$lib/components/DataDisplay/CodeBlock/CodeBlock.svelte';
-	import ConicGradient from '$lib/components/DataDisplay/ConicGradient/ConicGradient.svelte';
-	import type { ConicStop } from '$lib/components/DataDisplay/ConicGradient/types';
+	import ConicGradient from '$lib/components/Feedback/ConicGradient/ConicGradient.svelte';
+	import type { ConicStop } from '$lib/components/Feedback/ConicGradient/types';
 	import TabGroup from '$lib/components/Navigation/Tab/TabGroup.svelte';
 	import Tab from '$lib/components/Navigation/Tab/Tab.svelte';
 	// Sveld
-	import sveldConicGradient from '$lib/components/DataDisplay/ConicGradient/ConicGradient.svelte?raw&sveld';
+	import sveldConicGradient from '$lib/components/Feedback/ConicGradient/ConicGradient.svelte?raw&sveld';
 
 	// Docs Shell
 	const settings: DocsShellSettings = {
@@ -19,7 +19,7 @@
 			'Create conic gradient data visualizations for pie charts, loading spinners, and more.',
 		imports: ['ConicGradient'],
 		types: ['ConicStop'],
-		source: 'components/DataDisplay/ConicGradient',
+		source: 'components/Feedback/ConicGradient',
 		components: [{ sveld: sveldConicGradient }]
 	};
 

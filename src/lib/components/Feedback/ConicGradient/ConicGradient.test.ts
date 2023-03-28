@@ -1,8 +1,7 @@
 import { render } from '@testing-library/svelte';
 import { describe, it, expect } from 'vitest';
 
-import ConicGradient from '$lib/components/DataDisplay/ConicGradient/ConicGradient.svelte';
-
+import ConicGradient from '$lib/components/Feedback/ConicGradient/ConicGradient.svelte';
 describe('ConicGradient.svelte', () => {
 	it('Renders with minimal props', async () => {
 		const { getByTestId } = render(ConicGradient);
