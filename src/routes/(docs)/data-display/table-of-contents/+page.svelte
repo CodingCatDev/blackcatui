@@ -27,8 +27,8 @@
 	<section class="flex flex-col gap-4">
 		<DocsPreview>
 			<svelte:fragment slot="bcu-previewer-preview">
-				<div class="bcu-card p-4 text-token rounded-container-token w-96">
-					<p class="font-bold pb-4 ml-4">On This Page</p>
+				<div class="p-4 bcu-card text-token rounded-container-token w-96">
+					<p class="pb-4 ml-4 font-bold">On This Page</p>
 					<ListBox
 						active="variant-filled-primary"
 						hover="hover:bg-primary-hover-token"
@@ -60,7 +60,7 @@
 			<h3>Key Props</h3>
 			<p>The following props are critical to how this operates.</p>
 			<div class="table-container">
-				<table class="table">
+				<table class="bcu-table">
 					<thead>
 						<tr>
 							<th>Property</th>
