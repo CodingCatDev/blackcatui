@@ -118,17 +118,17 @@
 		aria-controls="bcu-accordion-panel-{id}"
 	>
 		<!-- Lead -->
-		{#if $$slots['bcu-lead']}
+		{#if $$slots['bcu-accordion-item-lead']}
 			<div class="bcu-accordion-lead">
-				<slot name="bcu-lead" />
+				<slot name="bcu-accordion-item-lead" />
 			</div>
 		{/if}
 		<!-- Summary -->
-		<div class="bcu-accordion-summary flex-1">
-			<slot name="bcu-summary">(summary)</slot>
+		<div class="bcu-accordion-item-summary flex-1">
+			<slot name="bcu-accordion-item-summary">(summary)</slot>
 		</div>
 		<!-- Caret -->
-		<div class="bcu-accordion-summary-caret {classesControlCaret}">
+		<div class="bcu-accordion-item-caret {classesControlCaret}">
 			<!-- SVG Caret -->
 			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
 				<path
@@ -147,7 +147,7 @@
 			aria-hidden={!openState}
 			aria-labelledby="bcu-accordion-control-{id}"
 		>
-			<slot name="bcu-content">(content)</slot>
+			<slot name="bcu-accordion-item-content">(content)</slot>
 		</div>
 	{/if}
 </div>
