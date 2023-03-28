@@ -174,9 +174,9 @@
 			<CodeBlock language="ts" code={`let lockedState: boolean = true;`} />
 			<CodeBlock language="html" code={`<StepperItem locked={lockedState}>...</StepperItem>`} />
 		</section>
-		<!-- StepperItem Term -->
+		<!-- stepTerm -->
 		<section class="space-y-4">
-			<h2>StepperItem Term</h2>
+			<h2>stepTerm</h2>
 			<p>
 				Use the <code>stepTerm</code> property to override text shown in the animated section at the
 				top of the Stepper, which is useful if you need i18n support for other languages.
