@@ -82,6 +82,7 @@
 				<a
 					class="bcu-button variant-soft"
 					href="https://github.com/CodingCatDev/blackcatui"
+					aria-label="Read more about CodingCatDev on GitHub"
 					target="_blank"
 					rel="noreferrer"
 				>
@@ -91,6 +92,7 @@
 				<a
 					class="bcu-button variant-soft"
 					href="https://discord.gg/vM2bagU"
+					aria-label="Join the CodingCatDev community on Discord"
 					target="_blank"
 					rel="noreferrer"
 				>
@@ -100,6 +102,7 @@
 				<a
 					class="bcu-button variant-soft"
 					href="https://twitter.com/CodingCatDev"
+					aria-label="Follow CodingCatDev on Twitter"
 					target="_blank"
 					rel="noreferrer"
 				>
@@ -109,6 +112,7 @@
 				<a
 					class="bcu-button variant-soft"
 					href="https://www.youtube.com/CodingCatDev"
+					aria-label="Watch more about CodingCatDev on YouTube"
 					target="_blank"
 					rel="noreferrer"
 				>

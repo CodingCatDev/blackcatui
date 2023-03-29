@@ -79,7 +79,7 @@
 	<svelte:fragment slot="bcu-app-bar-lead">
 		<div class="flex items-center gap-2">
 			<!-- Hamburger Menu -->
-			<button on:click={drawerOpen} class="w-10 lg:!hidden">
+			<button on:click={drawerOpen} class="w-10 lg:!hidden" aria-label="Open Drawer">
 				<Icon src={Bars3} theme="solid" />
 			</button>
 			<!-- Logo -->
@@ -101,6 +101,7 @@
 			<!-- trigger -->
 			<button
 				class="bcu-button hover:variant-soft-primary"
+				aria-label="Popup Showing Theme Options"
 				use:popup={{ event: 'click', target: 'theme' }}
 			>
 				<Icon src={Swatch} theme="solid" class="w-8" />
@@ -133,11 +134,6 @@
 							</ul>
 						</form>
 					</nav>
-					<div>
-						<a class="bcu-button variant-ghost-surface w-full" href="/docs/generator"
-							>Create a Theme</a
-						>
-					</div>
 				</div>
 				<!-- Arrow -->
 				<div class="arrow bg-surface-100-800-token" />
