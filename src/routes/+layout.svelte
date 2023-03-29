@@ -71,9 +71,72 @@
 		exampleImage: { ref: ModalExampleImage },
 		exampleList: { ref: ModalExampleList }
 	};
+
+	// SEO Metatags
+	const metaDefaults = {
+		title: 'BlackCatUI — UI Toolkit for Svelte + Tailwind',
+		description:
+			'BlackCatUI is a purrfect UI Toolkit for building reactive interfaces using Svelte and Tailwind.',
+		image:
+			'https://media.codingcat.dev/image/upload/f_jpg/dev-codingcatdev-photo/v60h88eohd7ufghkspgo'
+	};
+	const meta = {
+		title: metaDefaults.title,
+		description: metaDefaults.description,
+		image: metaDefaults.image,
+		// Article
+		article: { publishTime: '', modifiedTime: '', author: '' },
+		// Twitter
+		twitter: {
+			title: metaDefaults.title,
+			description: metaDefaults.description,
+			image: metaDefaults.image
+		}
+	};
+	page.subscribe((page) => {
+		// Restore Page Defaults
+		meta.title = metaDefaults.title;
+		meta.description = metaDefaults.description;
+		meta.image = metaDefaults.image;
+		// Restore Twitter Defaults
+		meta.twitter.title = metaDefaults.title;
+		meta.twitter.description = metaDefaults.description;
+		meta.twitter.image = metaDefaults.image;
+	});
 </script>
 
 <svelte:head>
+	<title>{meta.title}</title>
+	<!-- Meta Tags -->
+	<meta name="title" content={meta.title} />
+	<meta name="description" content={meta.description} />
+	<meta
+		name="keywords"
+		content="svelte, sveltekit, web, ui, components, reactive, accessibility, typescript, css, open source"
+	/>
+	<meta name="theme-color" content="#313276" />
+	<meta name="author" content="CodingCatDev, LLC" />
+	<!-- Open Graph - https://ogp.me/ -->
+	<meta property="og:site_name" content="BlackCatUI" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://www.blackcatui.com{$page.url.pathname}" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:title" content={meta.title} />
+	<meta property="og:description" content={meta.description} />
+	<meta property="og:image" content={meta.image} />
+	<meta property="og:image:secure_url" content={meta.image} />
+	<meta property="og:image:type" content="image/jpg" />
+	<meta property="og:image:width" content="1920" />
+	<meta property="og:image:height" content="1080" />
+
+	<!-- Open Graph: Twitter -->
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:site" content="@CodingCatDev" />
+	<meta name="twitter:creator" content="@CodingCatDev" />
+	<meta name="twitter:title" content={meta.twitter.title} />
+	<meta name="twitter:description" content={meta.twitter.description} />
+	<meta name="twitter:image" content={meta.twitter.image} />
+
 	<!-- Select Preset Theme CSS DO NOT REMOVE ESCAPES-->
 	{@html `\<style\>${currentTheme}}\</style\>`}
 </svelte:head>
