@@ -11,6 +11,9 @@ const pkg = JSON.parse(json);
 /** @type {import('vite').UserConfig} */
 const config: UserConfig = {
 	plugins: [sveltekit(), sveld()],
+	build: {
+		sourcemap: true
+	},
 	define: {
 		__PACKAGE__: pkg
 	},
