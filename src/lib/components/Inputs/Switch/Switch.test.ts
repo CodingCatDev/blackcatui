@@ -6,7 +6,7 @@ import SliderToggle from '$lib/components/Inputs/Switch/Switch.svelte';
 describe('SliderToggle.svelte', () => {
 	it('Renders with minimal props', async () => {
 		const { getByTestId } = render(SliderToggle);
-		expect(getByTestId('bcu-slide-toggle')).toBeTruthy();
+		expect(getByTestId('bcu-switch')).toBeTruthy();
 	});
 
 	it('Renders with all props', async () => {
@@ -19,6 +19,6 @@ describe('SliderToggle.svelte', () => {
 				label: 'testSlideToggle1'
 			}
 		});
-		expect(getByTestId('bcu-slide-toggle')).toBeTruthy();
+		expect(getByTestId('bcu-switch')).toBeTruthy();
 	});
 });

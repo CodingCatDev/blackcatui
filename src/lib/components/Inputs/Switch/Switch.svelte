@@ -82,19 +82,19 @@
 
 <div
 	id={label}
-	class="bcu-slide-toggle {classesBase}"
-	data-testid="bcu-slide-toggle"
+	class="bcu-switch {classesBase}"
+	data-testid="bcu-switch"
 	on:keydown={onKeyDown}
 	role="switch"
 	aria-label={label}
 	aria-checked={checked}
 	tabindex="0"
 >
-	<label class="bcu-slide-toggle-label {classesLabel}">
+	<label class="bcu-switch-label {classesLabel}">
 		<!-- Hidden Input -->
 		<input
 			type="checkbox"
-			class="hidden bcu-slide-toggle-input"
+			class="hidden bcu-switch-input"
 			bind:checked
 			{name}
 			on:click
@@ -109,13 +109,10 @@
 			disabled={$$props.disabled}
 		/>
 		<!-- Slider Track/Thumb -->
-		<div class="bcu-slide-toggle-track {classesTrack}" class:cursor-not-allowed={$$props.disabled}>
-			<div
-				class="bcu-slide-toggle-thumb {classesThumb}"
-				class:cursor-not-allowed={$$props.disabled}
-			/>
+		<div class="bcu-switch-track {classesTrack}" class:cursor-not-allowed={$$props.disabled}>
+			<div class="bcu-switch-thumb {classesThumb}" class:cursor-not-allowed={$$props.disabled} />
 		</div>
 		<!-- Label -->
-		{#if $$slots.default}<div class="ml-3 bcu-slide-toggle-text"><slot /></div>{/if}
+		{#if $$slots.default}<div class="ml-3 bcu-switch-text"><slot /></div>{/if}
 	</label>
 </div>
