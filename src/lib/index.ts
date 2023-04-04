@@ -38,6 +38,9 @@ export { default as AppShell } from './components/Layout/AppShell/AppShell.svelt
 
 // Navigation
 export { default as Drawer } from './components/Navigation/Drawer/Drawer.svelte';
+export {drawerStore} from './components/Navigation/Drawer/stores';
+export type {DrawerSettings} from './components/Navigation/Drawer/types';
+
 export { default as Stepper } from './components/Navigation/Stepper/Stepper.svelte';
 export { default as Tab } from './components/Navigation/Tab/Tab.svelte';
 export { default as TabGroup } from './components/Navigation/Tab/TabGroup.svelte';
@@ -45,28 +48,28 @@ export { default as TabGroup } from './components/Navigation/Tab/TabGroup.svelte
 // TODO: Maybe these should be sibling to components and types unified?
 
 // Clipboard
-export * from './components/Utilities/Clipboard/clipboard';
+export {clipboard} from './components/Utilities/Clipboard/clipboard';
 
 // DataTable
-export * from './components/Utilities/DataTable/actions';
-export * from './components/Utilities/DataTable/DataTable';
-export * from './components/Utilities/DataTable/types';
+export {tableInteraction, tableA11y} from './components/Utilities/DataTable/actions';
+export {createDataTableStore, dataTableHandler} from './components/Utilities/DataTable/DataTable';
+export type {DataTableModel, DataTableOptions} from './components/Utilities/DataTable/types';
 
 // FocusTrap
-export * from './components/Utilities/FocusTrap/focusTrap';
+export {focusTrap} from './components/Utilities/FocusTrap/focusTrap';
 
 // LightSwitch
 export { default as LightSwitch } from './components/Utilities/LightSwitch/LightSwitch.svelte';
-export * from './components/Utilities/LightSwitch/lightswitch';
+export {modeOsPrefers, modeUserPrefers, modeCurrent, getModeOsPrefers,getModeUserPrefers, getModeAutoPrefers, setModeUserPrefers, setModeCurrent, setInitialClassState, autoModeWatcher} from './components/Utilities/LightSwitch/lightswitch';
 
 // LocalStorage
-export * from './components/Utilities/LocalStorageStore/LocalStorageStore';
+export {localStorageStore} from './components/Utilities/LocalStorageStore/LocalStorageStore';
 
 //Modal
 export { default as Modal } from './components/Utilities/Modal/Modal.svelte';
-export * from './components/Utilities/Modal/stores';
-export * from './components/Utilities/Modal/types';
+export {modalStore} from './components/Utilities/Modal/stores';
+export type {ModalComponent, ModalSettings} from './components/Utilities/Modal/types';
 
 //Popup
-export * from './components/Utilities/Popup/popup';
-export * from './components/Utilities/Popup/types';
+export {storePopup, popup} from './components/Utilities/Popup/popup';
+export type {PopupSettings} from './components/Utilities/Popup/types';
