@@ -1,5 +1,5 @@
 <script lang="ts">
-	export let navLinks: [{ group: string; path: string; items?: { item: string; path: string }[] }];
+	export let navLinks: { group: string; path: string; items?: { item: string; path: string }[] }[];
 
 	// Stores
 	import { storeCurrentUrl } from '../../stores';

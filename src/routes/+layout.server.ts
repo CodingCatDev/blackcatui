@@ -3,13 +3,40 @@ import type { LayoutServerLoad } from './$types';
 export const load = (async ({ cookies }) => {
 	const modules = import.meta.glob('../lib/components/**/*.svelte');
 
-	const navLinks: [{ group: string; path: string; items?: { item: string; path: string }[] }] = [
+	const navLinks: { group: string; path: string; items?: { item: string; path: string }[] }[] = [
 		{
 			group: 'Docs',
 			path: 'docs',
 			items: [
 				{ item: 'Introduction', path: 'intro' },
-				{ item: 'Get Started', path: 'get-started' }
+				{ item: 'Get Started', path: 'get-started' },
+				{ item: 'Quickstart', path: 'quickstart' },
+				{ item: 'Themes', path: 'themes' },
+				{ item: 'Colors', path: 'colors' },
+				{ item: 'Styling', path: 'styling' },
+				{ item: 'Design Tokens', path: 'design-tokens' },
+				{ item: 'Variants', path: 'variants' },
+				{ item: 'Theme Generator', path: 'theme-generator' },
+				{ item: 'Contributing', path: 'contributing' }
+			]
+		},
+		{
+			group: 'Tailwind CSS',
+			path: 'tailwindcss',
+			items: [
+				{ item: 'Core', path: 'core' },
+				{ item: 'Typography', path: 'get-started' },
+				{ item: 'Forms', path: 'forms' },
+				{ item: 'Alerts', path: 'alerts' },
+				{ item: 'Badges', path: 'badges' },
+				{ item: 'Breadcrumbs', path: 'breadcrumbs' },
+				{ item: 'Buttons', path: 'buttons' },
+				{ item: 'Cards', path: 'cards' },
+				{ item: 'Chips', path: 'chips' },
+				{ item: 'Lists', path: 'lists' },
+				{ item: 'Placeholders', path: 'placeholders' },
+				{ item: 'Tables', path: 'tables' },
+				{ item: 'Gradient Headings', path: 'gradient-headings' },
 			]
 		}
 	];
