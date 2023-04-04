@@ -1,12 +1,21 @@
 <script lang="ts">
-	import DocsLayout from './(docs)/DocsLayout/DocsLayout.svelte';
+	import HomeHero from './(homepage)/HomeHero.svelte';
 </script>
 
-<DocsLayout>
-	<svelte:fragment slot="bcu-docs-header" />
-	<svelte:fragment slot="bcu-docs-detail">
-		<h1 class="underline">Welcome to your library project</h1>
-		<p>Create your package using @sveltejs/package and preview/showcase your work with SvelteKit</p>
-		<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
-	</svelte:fragment>
-</DocsLayout>
+<!-- hero -->
+<header id="hero" class="bg-surface-100-800-token hero-gradient">
+	<div class="section-container"><HomeHero /></div>
+</header>
+
+<style lang="postcss">
+	.section-container {
+		@apply w-full max-w-7xl mx-auto p-4 py-16 md:py-24;
+	}
+	/* Hero Gradient */
+	/* prettier-ignore */
+	.hero-gradient {
+		background-image:
+			radial-gradient(at 0% 0%, rgba(var(--color-secondary-500) / 0.33) 0px, transparent 50%),
+			radial-gradient(at 98% 1%, rgba(var(--color-primary-500) / 0.33) 0px, transparent 50%);
+	}
+</style>
