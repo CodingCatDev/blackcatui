@@ -96,6 +96,12 @@
 		</div>
 	</svelte:fragment>
 	<svelte:fragment slot="bcu-app-bar-trail">
+		<a
+			class="bcu-button p-2 px-4 space-x-4 variant-soft hover:variant-soft-primary"
+			href="/docs/intro"
+		>
+			Docs
+		</a>
 		<!-- Theme -->
 		<div>
 			<!-- trigger -->
@@ -105,7 +111,6 @@
 				use:popup={{ event: 'click', target: 'theme' }}
 			>
 				<Icon src={Swatch} theme="solid" class="w-8" />
-				<span class="hidden md:inline-block">Theme</span>
 			</button>
 			<!-- popup -->
 			<div class="bcu-card p-4 w-60 shadow-xl" data-popup="theme">
@@ -139,18 +144,6 @@
 				<div class="arrow bg-surface-100-800-token" />
 			</div>
 		</div>
-
-		<!-- Social -->
-		<!-- prettier-ignore -->
-		<section class="hidden sm:inline-flex sm:gap-2">
-			<a class="bcu-button-icon hover:variant-soft-primary" href="https://discord.gg/vM2bagU" target="_blank" rel="noreferrer">
-				<Icon src={Discord} theme="solid" />
-			</a>
-			<a class="bcu-button-icon hover:variant-soft-primary" href="https://github.com/CodingCatDev/blackcatui" target="_blank" rel="noreferrer">
-				<Icon src={Github} theme="solid" />
-			</a>
-		</section>
-
 		<!-- Search -->
 		<!-- <div class="md:inline md:ml-4">
 			<button
@@ -161,19 +154,5 @@
 				<span class="hidden md:inline-block badge variant-soft">{isOsMac ? '⌘' : 'Ctrl'}+K</span>
 			</button>
 		</div> -->
-
-		<!-- Sponsor -->
-		<div>
-			<!-- trigger -->
-			<a
-				class="bcu-button py-1.5 variant-soft hover:variant-soft-primary hidden md:inline-block"
-				href="https://github.com/sponsors/codingcatdev"
-				target="_blank"
-				rel="noreferrer"
-			>
-				<i class="fa-solid fa-heart" />
-				<span class="hidden md:inline-block">Sponsor</span>
-			</a>
-		</div>
 	</svelte:fragment>
 </AppBar>

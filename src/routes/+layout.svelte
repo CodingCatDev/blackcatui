@@ -55,6 +55,8 @@
 		// Scroll heading into view
 		scrollHeadingIntoView();
 	});
+
+	$: slotSidebarLeft = $page.url.pathname === '/' ? 'w-0' : 'bg-surface-50-900-token lg:w-auto';
 	$: ({ currentTheme } = data);
 
 	// Modals
@@ -146,7 +148,11 @@
 <Modal components={modalComponentRegistry} />
 
 <!-- App Shell -->
-<AppShell regionPage="overflow-y-scroll" slotPageFooter="pt-4 bg-surface-50-900-token">
+<AppShell
+	{slotSidebarLeft}
+	regionPage="overflow-y-scroll"
+	slotPageFooter="pt-4 bg-surface-50-900-token"
+>
 	<!-- Header -->
 	<svelte:fragment slot="bcu-app-shell-header">
 		<DocsAppBar />
