@@ -20,6 +20,12 @@
 		const splits = $storeCurrentUrl?.split('/');
 		const navHref = splits?.at(-1);
 		const navGroupLink = splits?.at(-2);
+
+		if (splits?.at(-3) === 'docs') {
+			// Check for deep docs example: /docs/contributing/requirements
+			return navGroupLink === href ? 'bg-primary-active-token' : '';
+		}
+
 		return navLink === navGroupLink && navHref === href ? 'bg-primary-active-token' : '';
 	};
 </script>
