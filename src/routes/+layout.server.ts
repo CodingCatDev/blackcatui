@@ -25,7 +25,7 @@ export const load = (async ({ cookies }) => {
 			path: 'tailwindcss',
 			items: [
 				{ item: 'Core', path: 'core' },
-				{ item: 'Typography', path: 'get-started' },
+				{ item: 'Typography', path: 'typography' },
 				{ item: 'Forms', path: 'forms' },
 				{ item: 'Alerts', path: 'alerts' },
 				{ item: 'Badges', path: 'badges' },

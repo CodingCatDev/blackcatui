@@ -30,30 +30,30 @@
 						<Avatar
 							{variant}
 							src="https://media.codingcat.dev/image/upload/c_thumb,h_200,w_200/main-codingcatdev-photo/xena-blackcatui-avatar.jpg"
-							alt="Bill Clinton"
+							alt="Xena"
 							class="bcu-avatar-xs"
 						/>
 						<Avatar
 							{variant}
 							src="https://media.codingcat.dev/image/upload/c_thumb,h_200,w_200/main-codingcatdev-photo/xena-blackcatui-avatar.jpg"
-							alt="Bill Clinton"
+							alt="Xena"
 							class="bcu-avatar-sm"
 						/>
 						<Avatar
 							{variant}
 							src="https://media.codingcat.dev/image/upload/c_thumb,h_200,w_200/main-codingcatdev-photo/xena-blackcatui-avatar.jpg"
-							alt="Bill Clinton"
+							alt="Xena"
 						/>
 						<Avatar
 							{variant}
 							src="https://media.codingcat.dev/image/upload/c_thumb,h_200,w_200/main-codingcatdev-photo/xena-blackcatui-avatar.jpg"
-							alt="Bill Clinton"
+							alt="Xena"
 							class="bcu-avatar-lg"
 						/>
 						<Avatar
 							{variant}
 							src="https://media.codingcat.dev/image/upload/c_thumb,h_200,w_200/main-codingcatdev-photo/xena-blackcatui-avatar.jpg"
-							alt="Bill Clinton"
+							alt="Xena"
 							class="bcu-avatar-xl"
 						/>
 					</div>
@@ -66,30 +66,30 @@
 <Avatar
 	{variant}
 	src="https://media.codingcat.dev/image/upload/c_thumb,h_200,w_200/main-codingcatdev-photo/xena-blackcatui-avatar.jpg"
-	alt="Bill Clinton"
+	alt="Xena"
 	class="bcu-avatar-xs"
 />
 <Avatar
 	{variant}
 	src="https://res.cloudinary.com/demo/image/twitter/1330457336.jpg"
-	alt="Bill Clinton"
+	alt="Xena"
 	class="bcu-avatar-sm"
 />
 <Avatar
 	{variant}
 	src="https://res.cloudinary.com/demo/image/twitter/1330457336.jpg"
-	alt="Bill Clinton"
+	alt="Xena"
 />
 <Avatar
 	{variant}
 	src="https://res.cloudinary.com/demo/image/twitter/1330457336.jpg"
-	alt="Bill Clinton"
+	alt="Xena"
 	class="bcu-avatar-lg"
 />
 <Avatar
 	{variant}
 	src="https://res.cloudinary.com/demo/image/twitter/1330457336.jpg"
-	alt="Bill Clinton"
+	alt="Xena"
 	class="bcu-avatar-xl"
 />
 				`}

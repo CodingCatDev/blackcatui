@@ -3,7 +3,7 @@
 	import DocsSideNav from '../DocsSideNav/DocsSideNav.svelte';
 	import { drawerStore } from '$lib/components/Navigation/Drawer/stores';
 
-	export let navLinks: [{ group: string; path: string; items?: { item: string; path: string }[] }];
+	export let navLinks: { group: string; path: string; items?: { item: string; path: string }[] }[];
 
 	$: classesDrawer = $drawerStore.id === 'doc-sidenav' ? 'lg:hidden' : '';
 </script>

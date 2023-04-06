@@ -66,6 +66,9 @@
 	import ModalExampleList from './(docs)/utilities/modal/examples/ModalExampleList.svelte';
 	import type { ModalComponent } from '$lib/components/Utilities/Modal/types';
 
+	// Toast
+	import Toast from '$lib/components/Feedback/Toast/Toast.svelte';
+
 	// Registered list of Components for Modals
 	const modalComponentRegistry: Record<string, ModalComponent> = {
 		// modalSearch: { ref: DocsSearch },
@@ -146,6 +149,7 @@
 <!-- Overlays -->
 <DocsDrawer navLinks={data.navLinks} />
 <Modal components={modalComponentRegistry} />
+<Toast />
 
 <!-- App Shell -->
 <AppShell
