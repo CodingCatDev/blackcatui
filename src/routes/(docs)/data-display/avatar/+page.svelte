@@ -29,30 +29,30 @@
 					<div class="flex flex-col md:flex-row gap-2 md:gap-2">
 						<Avatar
 							{variant}
-							src="https://res.cloudinary.com/demo/image/twitter/1330457336.jpg"
+							src="https://media.codingcat.dev/image/upload/c_thumb,h_200,w_200/main-codingcatdev-photo/xena-blackcatui-avatar.jpg"
 							alt="Bill Clinton"
 							class="bcu-avatar-xs"
 						/>
 						<Avatar
 							{variant}
-							src="https://res.cloudinary.com/demo/image/twitter/1330457336.jpg"
+							src="https://media.codingcat.dev/image/upload/c_thumb,h_200,w_200/main-codingcatdev-photo/xena-blackcatui-avatar.jpg"
 							alt="Bill Clinton"
 							class="bcu-avatar-sm"
 						/>
 						<Avatar
 							{variant}
-							src="https://res.cloudinary.com/demo/image/twitter/1330457336.jpg"
+							src="https://media.codingcat.dev/image/upload/c_thumb,h_200,w_200/main-codingcatdev-photo/xena-blackcatui-avatar.jpg"
 							alt="Bill Clinton"
 						/>
 						<Avatar
 							{variant}
-							src="https://res.cloudinary.com/demo/image/twitter/1330457336.jpg"
+							src="https://media.codingcat.dev/image/upload/c_thumb,h_200,w_200/main-codingcatdev-photo/xena-blackcatui-avatar.jpg"
 							alt="Bill Clinton"
 							class="bcu-avatar-lg"
 						/>
 						<Avatar
 							{variant}
-							src="https://res.cloudinary.com/demo/image/twitter/1330457336.jpg"
+							src="https://media.codingcat.dev/image/upload/c_thumb,h_200,w_200/main-codingcatdev-photo/xena-blackcatui-avatar.jpg"
 							alt="Bill Clinton"
 							class="bcu-avatar-xl"
 						/>
@@ -65,7 +65,7 @@
 						code={`
 <Avatar
 	{variant}
-	src="https://res.cloudinary.com/demo/image/twitter/1330457336.jpg"
+	src="https://media.codingcat.dev/image/upload/c_thumb,h_200,w_200/main-codingcatdev-photo/xena-blackcatui-avatar.jpg"
 	alt="Bill Clinton"
 	class="bcu-avatar-xs"
 />

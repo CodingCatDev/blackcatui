@@ -37,6 +37,8 @@
 	export let regionFooter = '';
 	/** Provide arbitrary classes to the source code region. */
 	export let regionSource = '';
+	/** Show Swatch Button */
+	export let swatchButton = true;
 
 	// Classes
 	const cBase =
@@ -102,13 +104,15 @@
 					</RadioGroup>
 				{/if}
 				<!-- Toggle Swatches -->
-				<button
-					class="bcu-button {swatches ? 'variant-filled' : 'variant-soft'}"
-					on:click={toggleSwatches}
-					title="Backgrounds"
-				>
-					<Icon src={Swatch} theme="solid" class="w-6" />
-				</button>
+				{#if swatchButton}
+					<button
+						class="bcu-button {swatches ? 'variant-filled' : 'variant-soft'}"
+						on:click={toggleSwatches}
+						title="Backgrounds"
+					>
+						<Icon src={Swatch} theme="solid" class="w-6" />
+					</button>
+				{/if}
 			</div>
 		{/if}
 	</header>
