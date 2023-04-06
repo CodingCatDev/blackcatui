@@ -16,8 +16,12 @@
 	}
 
 	$: classesBase = `p-4 pb-20 space-y-4 overflow-y-auto ${$$props.class ?? ''}`;
-	$: classesActive = (href: string) =>
-		$storeCurrentUrl?.split('/').at(-1) === href ? 'bg-primary-active-token' : '';
+	$: classesActive = (navLink: string, href: string) => {
+		const splits = $storeCurrentUrl?.split('/');
+		const navHref = splits?.at(-1);
+		const navGroupLink = splits?.at(-2);
+		return navLink === navGroupLink && navHref === href ? 'bg-primary-active-token' : '';
+	};
 </script>
 
 <!-- Nav Links -->
@@ -35,7 +39,7 @@
 						<li on:click={onListItemClick} on:keypress>
 							<a
 								href={`/${navLink.path}${item?.path ? '/' + item?.path : ''}`}
-								class={classesActive(item.path)}
+								class={classesActive(navLink.path, item.path)}
 								data-sveltekit-preload-data="hover"
 							>
 								<span class="flex-auto">{item.item}</span>
