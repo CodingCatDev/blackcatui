@@ -88,7 +88,7 @@
 	.bcu-button-group a,
 	.bcu-button-group-vertical button,
 	.bcu-button-group-vertical a {
-		@apply button-base-styles hover:bg-surface-50/[3%] active:bg-surface-900/[3%];
+		@apply bcu-button-base-styles hover:bg-surface-50/[3%] active:bg-surface-900/[3%];
 		/* Reset Anchor Styles */
 		@apply !no-underline !text-inherit;
 	}
