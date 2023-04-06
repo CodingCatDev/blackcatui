@@ -2,8 +2,6 @@
 	// Core
 	import DocsLayout from '../../DocsLayout/DocsLayout.svelte';
 
-	// Types
-	import type { TableSource } from '$lib/components/DataDisplay/Table/types';
 	// Components
 	import CodeBlock from '$lib/components/DataDisplay/CodeBlock/CodeBlock.svelte';
 
