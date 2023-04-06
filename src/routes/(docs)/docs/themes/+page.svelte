@@ -162,7 +162,7 @@
 					<svelte:fragment slot="bcu-tab-group-panel">
 						{#if tabsFontImport === 0}
 							<!-- 1 -->
-							<h3 data-toc-ignore>1. Download a Font</h3>
+							<h3 data-bcu-toc-ignore>1. Download a Font</h3>
 							<p>
 								Select a font on Google Fonts, then tap the "Download Family" button near the
 								top-right of the page.
@@ -181,7 +181,7 @@
 								{/each}
 							</div>
 							<!-- 2 -->
-							<h3 data-toc-ignore>2. Add the Font Files</h3>
+							<h3 data-bcu-toc-ignore>2. Add the Font Files</h3>
 							<p>
 								Unzip the downloaded file, then copy all font files to the <code>/static/fonts</code
 								>
@@ -193,7 +193,7 @@
 								<CodeBlock language="plaintext" code={`/static/fonts/${f.file}`} />
 							{/each}
 							<!-- 3 -->
-							<h3 data-toc-ignore>3. Apply @font-face</h3>
+							<h3 data-bcu-toc-ignore>3. Apply @font-face</h3>
 							<!-- prettier-ignore -->
 							<p>At the top of your global stylesheet <code>/src/app.postcss</code> append the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face" target="_blank" rel="noreferrer">@font-face</a> settings per each font. The <code>font-family</code> assigns the font's reference name, while <code>src</code> points to the font file(s) in your <code>/static/fonts</code> directory.</p>
 							{#each activeFonts as f}
@@ -210,7 +210,7 @@
 								/>
 							{/each}
 							<!-- 4 -->
-							<h3 data-toc-ignore>4. Set the Font Family.</h3>
+							<h3 data-bcu-toc-ignore>4. Set the Font Family.</h3>
 							<p>
 								Use CSS Property overrides or open your custom theme to set the font family for <em
 									>base</em
@@ -239,7 +239,7 @@
 								</p>
 							</aside>
 							<!-- 1 -->
-							<h3 data-toc-ignore>1. Select a Font</h3>
+							<h3 data-bcu-toc-ignore>1. Select a Font</h3>
 							<p>
 								Choose a font on Google Fonts, select each font weight you wish to use, then tap the
 								"View Select Families" icon button at the very top-right of the page. Under the "Use
@@ -258,7 +258,7 @@
 									</a>
 								{/each}
 							</div>
-							<h3 data-toc-ignore>2. Set the Import</h3>
+							<h3 data-bcu-toc-ignore>2. Set the Import</h3>
 							<p>
 								Open your global stylesheet in <code>/src/app.postcss</code> and paste the import statement
 								at the top of the file.
@@ -267,7 +267,7 @@
 								<CodeBlock language="css" code={`@import url('${f.import}');`} />
 							{/each}
 							<!-- 3 -->
-							<h3 data-toc-ignore>3. Set the Font Family.</h3>
+							<h3 data-bcu-toc-ignore>3. Set the Font Family.</h3>
 							<p>
 								Google Fonts also provides a recommend font family set. Copy the provided set, then
 								apply this to either the <em>base</em> or
