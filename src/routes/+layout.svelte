@@ -3,6 +3,7 @@
 	import { page } from '$app/stores';
 	import { afterNavigate } from '$app/navigation';
 	import { storeCurrentUrl, storeTheme } from './stores';
+	import { storePreview } from './(docs)/DocsThemer/stores';
 	import type { LayoutData } from './$types';
 	export let data: LayoutData;
 
@@ -30,9 +31,10 @@
 
 	// Set body `data-theme` based on current theme status
 	storeTheme.subscribe(setBodyThemeAttribute);
+	storePreview.subscribe(setBodyThemeAttribute);
 	function setBodyThemeAttribute(): void {
 		if (!browser) return;
-		document.body.setAttribute('data-theme', $storeTheme);
+		document.body.setAttribute('data-theme', $storePreview ? 'generator' : $storeTheme);
 	}
 	// Scroll heading into view
 	function scrollHeadingIntoView(): void {

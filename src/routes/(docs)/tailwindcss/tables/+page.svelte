@@ -8,8 +8,8 @@
 	// Components
 	import CodeBlock from '$lib/components/DataDisplay/CodeBlock/CodeBlock.svelte';
 
-	import TabGroup from '$lib/components/Tab/TabGroup.svelte';
-	import Tab from '$lib/components/Tab/Tab.svelte';
+	import TabGroup from '$lib/components/Navigation/Tab/TabGroup.svelte';
+	import Tab from '$lib/components/Navigation/Tab/Tab.svelte';
 
 	// Docs Shell
 	const settings: DocsShellSettings = {
@@ -21,48 +21,48 @@
 		source: 'styles/elements/tables.css',
 		classes: [
 			[
-				'<code>.table-container</code>',
+				'<code>.bcu-table-container</code>',
 				'-',
 				'Apply to a wrapping parent element to enable responsive scrolling.'
 			],
-			['<code>.table</code>', '-', 'Apply to a native HTML table element to add table styles.'],
+			['<code>.bcu-table</code>', '-', 'Apply to a native HTML table element to add table styles.'],
 			[
-				'<code>.table-compact</code>',
+				'<code>.bcu-table-compact</code>',
 				'-',
 				'Apply to the native HTML element to set shorter row spacing.'
 			],
 			[
-				'<code>.table-comfortable</code>',
+				'<code>.bcu-table-comfortable</code>',
 				'-',
 				'Apply to the native HTML element to set taller row spacing.'
 			],
 			[
-				'<code>.table-hover</code>',
+				'<code>.bcu-table-hover</code>',
 				'-',
 				'Apply to a table element to enable a subtle hover effect on rows.'
 			],
 			[
-				'<code>.table-interactive</code>',
+				'<code>.bcu-table-interactive</code>',
 				'-',
 				'Apply to a table element to enable a visible hover effect and pointer cursor.'
 			],
 			[
-				'<code>.table-sort-asc</code>',
+				'<code>.bcu-table-sort-asc</code>',
 				'-',
 				'Apply to a table heading cell to add a down arrow indicating ascending sort.'
 			],
 			[
-				'<code>.table-sort-dsc</code>',
+				'<code>.bcu-table-sort-dsc</code>',
 				'-',
 				'Apply to a table heading cell to add an up arrow indicating desending sort.'
 			],
 			[
-				'<code>.table-row-checked</code>',
+				'<code>.bcu-table-row-checked</code>',
 				'-',
 				'Apply to a table body row to indicate selection state.'
 			],
 			[
-				'<code>.table-cell-fit</code>',
+				'<code>.bcu-table-cell-fit</code>',
 				'-',
 				'Apply to a table cell to auto-fit to the content widths.'
 			]
@@ -82,12 +82,11 @@
 </script>
 
 <DocsShell {settings}>
-	<!-- Slot: Sandbox -->
-	<svelte:fragment slot="sandbox">
+	<section class="flex flex-col gap-10">
 		<DocsPreview>
 			<svelte:fragment slot="bcu-previewer-preview">
-				<div class="table-container text-token">
-					<table class="table table-hover">
+				<div class="bcu-table-container text-token">
+					<table class="bcu-table bcu-table-hover">
 						<thead>
 							<tr>
 								<th>Position</th>
@@ -120,9 +119,9 @@
 					language="html"
 					code={`
 <!-- Responsive Container (recommended) -->
-<div class="table-container">
+<div class="bcu-table-container">
 	<!-- Native Table Element -->
-	<table class="table table-hover">
+	<table class="bcu-table bcu-table-hover">
 		<thead>
 			<tr>
 				<th>Position</th>
@@ -153,13 +152,10 @@
 				/>
 			</svelte:fragment>
 		</DocsPreview>
-	</svelte:fragment>
 
-	<!-- Slot: Usage -->
-	<svelte:fragment slot="usage">
 		<p>
-			Wrap a <code>.table-container</code> element around any native HTML table with the
-			<code>.table</code> class applied to create a responsive table.
+			Wrap a <code>.bcu-table-container</code> element around any native HTML table with the
+			<code>.bcu-table</code> class applied to create a responsive table.
 		</p>
 		<!-- Options -->
 		<section class="space-y-4">
@@ -171,48 +167,49 @@
 				<Tab bind:group={tabSet} name="tab3" value={3}>Fit Width</Tab>
 				<Tab bind:group={tabSet} name="tab3" value={4}>Sorting</Tab>
 				<!-- Tab Panels --->
-				<svelte:fragment slot="panel">
+				<svelte:fragment slot="bcu-tab-group-panel">
 					{#if tabSet === 0}
 						<!-- Spacing -->
 						<p>
-							Apply classes <code>.table-compact</code> or <code>.table-comfortable</code> to the
+							Apply classes <code>.bcu-table-compact</code> or <code>.bcu-table-comfortable</code>
+							to the
 							<em>table</em> for tighter or looser row spacing.
 						</p>
-						<CodeBlock language="html" code={`<table class="table-compact">...</table>`} />
+						<CodeBlock language="html" code={`<table class="bcu-table-compact">...</table>`} />
 					{:else if tabSet === 1}
 						<!-- Hover -->
 						<p>
-							Apply the <code>.table-hover</code> class to add a subtle hover style which can be
+							Apply the <code>.bcu-table-hover</code> class to add a subtle hover style which can be
 							helpful when scanning data horizontally. You can also use the
-							<code>.table-interactive</code> class if the table rows is intended to be interactive on
-							click. Avoid using both classes.
+							<code>.bcu-table-interactive</code> class if the table rows is intended to be interactive
+							on click. Avoid using both classes.
 						</p>
-						<CodeBlock language="html" code={`<table class="table-hover">...</table>`} />
-						<CodeBlock language="html" code={`<table class="table-interactive">...</table>`} />
+						<CodeBlock language="html" code={`<table class="bcu-table-hover">...</table>`} />
+						<CodeBlock language="html" code={`<table class="bcu-table-interactive">...</table>`} />
 					{:else if tabSet === 2}
 						<!-- Selection -->
 						<p>
-							Apply the <code>.table-row-checked</code> class to a table body row to indicate an active
-							selection state.
+							Apply the <code>.bcu-table-row-checked</code> class to a table body row to indicate an
+							active selection state.
 						</p>
-						<CodeBlock language="html" code={`<tr class="table-row-checked">...</tr>`} />
+						<CodeBlock language="html" code={`<tr class="bcu-table-row-checked">...</tr>`} />
 					{:else if tabSet === 3}
 						<!-- Fit -->
 						<p>
-							Use the <code>.table-cell-fit</code> class on a cell element to fit the cell to the content
-							widths. This can be useful for small columns that contain elements such as avatars or IDs.
-							Be sure to apply to both the table header and table cell.
+							Use the <code>.bcu-table-cell-fit</code> class on a cell element to fit the cell to the
+							content widths. This can be useful for small columns that contain elements such as avatars
+							or IDs. Be sure to apply to both the table header and table cell.
 						</p>
-						<CodeBlock language="html" code={`<th class="table-cell-fit">Avatar</th>`} />
-						<CodeBlock language="html" code={`<td class="table-cell-fit">(avatar)</td>`} />
+						<CodeBlock language="html" code={`<th class="bcu-table-cell-fit">Avatar</th>`} />
+						<CodeBlock language="html" code={`<td class="bcu-table-cell-fit">(avatar)</td>`} />
 					{:else if tabSet === 4}
 						<!-- Sorting -->
 						<p>
-							Apply <code>.table-sort-asc</code> or <code>.table-sort-dsc</code> to the
+							Apply <code>.bcu-table-sort-asc</code> or <code>.bcu-table-sort-dsc</code> to the
 							<em>table head</em> elements to sort by ascending or descending order respectively.
 						</p>
-						<CodeBlock language="html" code={`<th class="table-sort-asc">Skeleton</th>`} />
-						<CodeBlock language="html" code={`<th class="table-sort-dsc">Skeleton</th>`} />
+						<CodeBlock language="html" code={`<th class="bcu-table-sort-asc">Skeleton</th>`} />
+						<CodeBlock language="html" code={`<th class="bcu-table-sort-dsc">Skeleton</th>`} />
 					{/if}
 				</svelte:fragment>
 			</TabGroup>
@@ -225,11 +222,11 @@
 					class="!flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 md:space-x-4"
 				>
 					<p>A simple data-driven table component.</p>
-					<a class="bcu-button variant-ghost-surface" href="/components/tables"
+					<a class="bcu-button variant-ghost-surface" href="/data-display/table"
 						>Tables Component &rarr;</a
 					>
 				</div>
 			</div>
 		</section>
-	</svelte:fragment>
+	</section>
 </DocsShell>

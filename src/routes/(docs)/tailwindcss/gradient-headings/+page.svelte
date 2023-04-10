@@ -22,8 +22,7 @@
 </script>
 
 <DocsShell {settings}>
-	<!-- Slot: Sandbox -->
-	<svelte:fragment slot="sandbox">
+	<section class="flex flex-col gap-10">
 		<DocsPreview background="bg-surface-900">
 			<svelte:fragment slot="bcu-previewer-preview">
 				<div class="flex justify-center space-x-2">
@@ -64,12 +63,9 @@
 				/>
 			</svelte:fragment>
 		</DocsPreview>
-	</svelte:fragment>
 
-	<!-- Slot: Usage -->
-	<svelte:fragment slot="usage">
 		<!-- prettier-ignore -->
-		<p>Can be generated using <a href="https://tailwindcss.com/docs/gradient-color-stops" target="_blank" rel="noreferrer">Tailwind's gradient color stops</a>. Skeleton is not required.
+		<p>Can be generated using <a href="https://tailwindcss.com/docs/gradient-color-stops" target="_blank" rel="noreferrer">Tailwind's gradient color stops</a>. BlackCatUI is not required.
 		</p>
 		<section class="space-y-4">
 			<h2>Using @apply</h2>
@@ -91,5 +87,5 @@
 			/>
 			<CodeBlock language="html" code={`<h1><span class="gradient-heading">Skeleton</span></h1>`} />
 		</section>
-	</svelte:fragment>
+	</section>
 </DocsShell>
