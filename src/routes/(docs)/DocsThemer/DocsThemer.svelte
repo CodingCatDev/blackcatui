@@ -31,13 +31,13 @@
 	/* @ts-ignore */
 	const storeThemGenForm: Writable<FormTheme> = localStorageStore('storeThemGenForm', {
 		colors: [
-			{ key: 'primary', label: 'Primary', hex: '#0FBA81', rgb: '0 0 0', on: '0 0 0' },
-			{ key: 'secondary', label: 'Secondary', hex: '#4F46E5', rgb: '0 0 0', on: '255 255 255' },
-			{ key: 'tertiary', label: 'Tertiary', hex: '#0EA5E9', rgb: '0 0 0', on: '0 0 0' },
+			{ key: 'primary', label: 'Primary', hex: '#ec4899', rgb: '0 0 0', on: '0 0 0' },
+			{ key: 'secondary', label: 'Secondary', hex: '#06b6d4', rgb: '0 0 0', on: '255 255 255' },
+			{ key: 'tertiary', label: 'Tertiary', hex: '#14b8a6', rgb: '0 0 0', on: '0 0 0' },
 			{ key: 'success', label: 'Success', hex: '#84cc16', rgb: '0 0 0', on: '0 0 0' },
-			{ key: 'warning', label: 'Warning', hex: '#EAB308', rgb: '0 0 0', on: '0 0 0' },
-			{ key: 'error', label: 'Error', hex: '#D41976', rgb: '0 0 0', on: '255 255 255' },
-			{ key: 'surface', label: 'Surface', hex: '#495a8f', rgb: '0 0 0', on: '255 255 255' }
+			{ key: 'warning', label: 'Warning', hex: '#eab308', rgb: '0 0 0', on: '0 0 0' },
+			{ key: 'error', label: 'Error', hex: '#ef4444', rgb: '0 0 0', on: '255 255 255' },
+			{ key: 'surface', label: 'Surface', hex: '#6366f1', rgb: '0 0 0', on: '255 255 255' }
 		],
 		fontBase: 'system',
 		fontHeadings: 'system',
@@ -137,11 +137,11 @@
 }`;
 	}
 	//TODO: Fix Preview
-	// $: livePreviewStylesheet = $storePreview ? `\<style\>${cssOutput}\</style\>` : '';
+	$: livePreviewStylesheet = $storePreview ? `${cssOutput}` : '';
 </script>
 
 <!-- Live Preview of Generated Theme -->
-<!-- <svelte:head>{@html livePreviewStylesheet}</svelte:head> -->
+<svelte:head>{@html `\<style\>${livePreviewStylesheet}\</style\>`}</svelte:head>
 <div class="docs-themer space-y-4">
 	<div class="card variant-glass p-4 flex justify-between items-center">
 		<h2>Enable Preview</h2>
