@@ -8,7 +8,7 @@
 	// Components
 	import CodeBlock from '$lib/components/DataDisplay/CodeBlock/CodeBlock.svelte';
 
-	import SlideToggle from '$lib/components/SlideToggle/SlideToggle.svelte';
+	import Switch from '$lib/components/Inputs/Switch/Switch.svelte';
 
 	// Docs Shell
 	const settings: DocsShellSettings = {
@@ -29,8 +29,7 @@
 </script>
 
 <DocsShell {settings}>
-	<!-- Slot: Sandbox -->
-	<svelte:fragment slot="sandbox">
+	<section class="flex flex-col gap-10">
 		<DocsPreview>
 			<svelte:fragment slot="bcu-previewer-preview">
 				<section class="card w-full">
@@ -56,19 +55,14 @@
 			</svelte:fragment>
 			<svelte:fragment slot="bcu-previewer-footer">
 				<div class="text-center">
-					<SlideToggle bind:checked={animate} name="animated" accent="bg-secondary-500"
-						>Animated</SlideToggle
-					>
+					<Switch bind:checked={animate} name="animated" accent="bg-secondary-500">Animated</Switch>
 				</div>
 			</svelte:fragment>
 			<svelte:fragment slot="bcu-previewer-source">
 				<CodeBlock language="html" code={`<div class="placeholder" />`} />
 			</svelte:fragment>
 		</DocsPreview>
-	</svelte:fragment>
 
-	<!-- Slot: Usage -->
-	<svelte:fragment slot="usage">
 		<p>
 			Apply the <code>.placeholder</code> class to any <em>div</em> element.
 		</p>
@@ -144,5 +138,5 @@
 			<p>Apply the <code>.animate-pulse</code> utility class provided by Tailwind.</p>
 			<CodeBlock language="html" code={`<div class="placeholder animate-pulse" />`} />
 		</div>
-	</svelte:fragment>
+	</section>
 </DocsShell>
