@@ -78,3 +78,10 @@ export type { ToastSettings } from './components/Feedback/Toast/types';
 //Popup
 export { storePopup, popup } from './components/Utilities/Popup/popup';
 export type { PopupSettings } from './components/Utilities/Popup/types';
+
+//Firebase
+export { default as FirebaseApp } from './components/Firebase/App/FirebaseApp.svelte';
+export { default as FirebaseUser } from './components/Firebase/Auth/FirebaseUser.svelte';
+export { default as FirebaseCollection } from './components/Firebase/Firestore/FirebaseCollection.svelte';
+export { default as FirebaseDoc } from './components/Firebase/Firestore/FirebaseDoc.svelte';
+export { docStore, userStore, collectionStore } from './components/Firebase/stores';

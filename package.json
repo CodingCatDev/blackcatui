@@ -1,7 +1,7 @@
 {
 	"name": "@codingcatdev/blackcatui",
 	"private": false,
-	"version": "0.0.5",
+	"version": "0.1.0",
 	"description": "A Purrfect SvelteKit and Tailwind CSS component library.",
 	"author": "Alex Patterson <alex@codingcat.dev>",
 	"scripts": {
@@ -41,11 +41,11 @@
 		"./dist/styles/variants.css": "./dist/styles/variants.css",
 		"./dist/themes/theme-blackcatui.css": "./dist/themes/theme-blackcatui.css",
 		"./dist/themes/theme-skeleton.css": "./dist/themes/theme-skeleton.css",
-		"./dist/tailwind/blackcatui.cjs":"./dist/tailwind/blackcatui.cjs"
+		"./dist/tailwind/blackcatui.cjs": "./dist/tailwind/blackcatui.cjs"
 	},
 	"files": [
 		"dist",
-    	"!dist/**/*.test.*"
+		"!dist/**/*.test.*"
 	],
 	"peerDependencies": {
 		"svelte": "^3.54.0"
@@ -89,6 +89,7 @@
 	"types": "./dist/index.d.ts",
 	"type": "module",
 	"dependencies": {
-		"@tailwindcss/forms": "^0.5.3"
+		"@tailwindcss/forms": "^0.5.3",
+		"firebase": "^9.20.0"
 	}
 }
